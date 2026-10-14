@@ -21,12 +21,12 @@ const sidebars: SidebarsConfig = {
       items: [
         'administrator/data-master/index',
         'administrator/data-master/peserta',
+        'administrator/data-master/tambah-peserta',
+        'administrator/data-master/upload-data-peserta',
         'administrator/data-master/group',
         'administrator/data-master/jurusan',
         'administrator/data-master/agama',
         'administrator/data-master/matpel',
-        'administrator/data-master/tambah-peserta',
-        'administrator/data-master/upload-data-peserta',
       ],
     },
     {
