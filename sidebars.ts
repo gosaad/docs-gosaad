@@ -58,6 +58,7 @@ const sidebars: SidebarsConfig = {
         'administrator/evaluasi/koreksi',
         'administrator/evaluasi/hasil-ujian',
         'administrator/evaluasi/ledger-hasil-peserta',
+        'administrator/evaluasi/summary-bank-soal',
       ],
     },
     {

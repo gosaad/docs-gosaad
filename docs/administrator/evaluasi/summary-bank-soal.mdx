@@ -1,0 +1,90 @@
+---
+sidebar_position: 4
+title: Menganalisis summary bank soal
+description: Generate, lihat, cetak, dan unduh summary kualitas bank soal di GoSAAD.
+---
+
+import ZoomableImage from '@site/src/components/ZoomableImage';
+
+# Menganalisis summary bank soal
+
+Gunakan **Summary Bank Soal** untuk membuat dan melihat ringkasan hasil penggunaan bank soal. Halaman daftar memperlihatkan status summary, nilai, waktu pengerjaan, serta waktu generate terakhir. Dari daftar ini, Anda dapat membuka analisis per soal, membuat ulang summary, atau mengunduhnya sebagai Excel.
+
+<ZoomableImage
+  alt="Halaman Analisis Bank Soal dengan ringkasan nilai dan pengerjaan serta analisis untuk satu soal"
+  caption="Contoh analisis setelah summary berstatus Generated: halaman memperlihatkan ringkasan bank soal dan hasil analisis pada setiap soal."
+  src="/img/evaluasi-summary-bank-soal-analisis.png"
+/>
+
+## Yang perlu disiapkan
+
+- Anda memiliki akses ke menu **Summary bank soal**.
+- Bank soal yang akan dianalisis sudah tersedia.
+- Untuk menghasilkan summary, bank soal memiliki jawaban dari ujian yang sudah selesai.
+
+## Buka dan saring daftar bank soal
+
+1. Pada navigasi sebelah kiri, buka **Evaluasi**.
+2. Pilih **Summary bank soal**.
+3. Gunakan **Cari kode-banksoal** untuk mencari satu bank soal.
+4. Pilih **Mata pelajaran**, **Pemilik**, atau **Status** bila diperlukan.
+5. Klik **Filter data**.
+
+Pilihan **Status** terdiri dari **Semua status**, **Generated**, dan **Belum digenerate**. Klik **Reset** untuk menghapus filter, atau **Muat ulang** untuk memperbarui daftar tanpa mengubah filter yang sedang aktif.
+
+## Membaca daftar summary
+
+Setiap baris menunjukkan kode bank soal, pemilik, mata pelajaran, dan status summary. Kolom ringkasan memuat:
+
+- **Nilai**: rata-rata, tertinggi, dan terendah.
+- **Waktu pengerjaan**: rata-rata, tercepat, dan terlama.
+- **Terakhir generate**: waktu summary terakhir dibuat.
+
+Ringkasan pada bagian atas halaman menampilkan total bank soal, jumlah **Generated** pada halaman saat ini, rata-rata nilai, dan rata-rata waktu pengerjaan.
+
+## Generate summary bank soal
+
+1. Pada bank soal yang akan dianalisis, klik **Generate**.
+2. Perhatikan status proses yang ditampilkan pada panel generate.
+3. Tunggu sampai status berubah menjadi **Selesai**.
+4. Klik **Muat ulang** bila Anda perlu memeriksa daftar kembali.
+
+Saat proses masih berjalan, tombol menampilkan **Job berjalan** atau **Generate...**. Panel proses dapat menunjukkan **Antre**, **Berjalan**, **Selesai**, **Gagal**, atau **Dibatalkan**. Jika proses gagal atau dibatalkan, gunakan **Coba generate lagi** yang tersedia pada panel tersebut.
+
+:::note
+Jika sumber data belum berubah, aplikasi dapat tidak membuat ulang summary. Jika belum ada jawaban dari ujian selesai untuk bank soal tersebut, generate belum menghasilkan summary.
+:::
+
+## Lihat dan cetak analisis
+
+1. Pada baris bank soal, klik **Lihat summary**.
+2. Periksa ringkasan bank soal: jumlah pengerjaan, jumlah jadwal, waktu pengerjaan, nilai, point, dan waktu pembaruan analisis.
+3. Gulir ke bagian soal untuk melihat tipe soal, point, konten soal, serta analisis yang tersedia untuk setiap soal.
+4. Klik **Cetak analisis** bila Anda membutuhkan cetakan laporan.
+5. Klik **Daftar** untuk kembali ke daftar summary bank soal.
+
+Halaman analisis menggunakan penanda **RAHASIA**. Perlakukan laporan sebagai dokumen internal dan bagikan hanya kepada pihak yang berwenang.
+
+## Unduh Excel
+
+1. Pastikan status bank soal adalah **Generated**.
+2. Pada daftar, klik **Download excel**; atau buka analisis lalu klik **Unduh Excel**.
+3. Tunggu sampai file selesai disiapkan dan unduhan dimulai.
+
+Tombol unduh tidak tersedia sebelum summary berhasil digenerate. Bila generate atau unduh sedang berjalan, tunggu proses selesai terlebih dahulu.
+
+## Hasil yang diharapkan
+
+Bank soal yang telah memiliki data jawaban dapat memiliki summary berstatus **Generated**. Anda dapat melihat statistik hasil dan waktu pengerjaan, membuka analisis per soal, mencetak laporan, atau mengunduh Excel sesuai kebutuhan evaluasi.
+
+## Jika summary tidak tersedia
+
+- Jika daftar kosong setelah filter digunakan, klik **Reset** lalu cari kembali dengan filter yang lebih longgar.
+- Jika status tetap **Belum digenerate**, klik **Generate** dan tunggu sampai proses selesai.
+- Jika generate tidak menghasilkan summary, pastikan bank soal sudah memiliki jawaban dari ujian yang selesai.
+- Jika tombol **Download excel** tidak aktif, buat summary terlebih dahulu sampai statusnya **Generated**.
+- Jika analisis tidak dapat dibuka, klik **Muat ulang**. Bila akses ditolak, pastikan akun Anda memiliki izin untuk melihat summary bank soal.
+
+## Langkah berikutnya
+
+Gunakan [Hasil ujian](./hasil-ujian) untuk memeriksa hasil peserta pada satu jadwal secara lebih rinci.
