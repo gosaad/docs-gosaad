@@ -69,6 +69,18 @@ const config: Config = {
     },
     footer: {
       style: 'dark',
+      links: [
+        {
+          title: 'Komunitas',
+          items: [
+            {
+              label: 'Bergabung diskusi di Telegram',
+              href: 'https://t.me/gosaad02',
+              className: 'telegramFooterLink',
+            },
+          ],
+        },
+      ],
       copyright: `© ${new Date().getFullYear()} GoSAAD. Panduan penggunaan.`,
     },
     prism: {

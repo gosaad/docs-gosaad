@@ -72,6 +72,19 @@
   margin-bottom: 0.25rem;
 }
 
+.telegramFooterLink {
+  align-items: center;
+  display: inline-flex;
+  gap: 0.4rem;
+}
+
+.telegramFooterLink::before {
+  background: center / contain no-repeat url('/img/telegram-logo.svg');
+  content: '';
+  height: 1.125rem;
+  width: 1.125rem;
+}
+
 .footer__bottom {
   margin-top: 0.5rem;
 }

@@ -12,6 +12,7 @@ import styles from './index.module.css';
 function HomepageHeader() {
   const {siteConfig} = useDocusaurusContext();
   const logoUrl = useBaseUrl('img/gosaad-icon.svg');
+  const telegramLogoUrl = useBaseUrl('img/telegram-logo.svg');
   return (
     <header className={clsx('hero hero--primary', styles.heroBanner)}>
       <div className="container">
@@ -25,14 +26,29 @@ function HomepageHeader() {
         <Heading as="h1" className={clsx('hero__title', styles.heroTitle)}>
           Panduan {siteConfig.title}
         </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
+        <p className="hero__subtitle">
+          Panduan langkah demi langkah untuk menyiapkan, melaksanakan, dan
+          mengevaluasi ujian.
+        </p>
         <div className={styles.buttons}>
           <Link
             className="button button--secondary button--lg"
-            to="/docs/intro">
-            Mulai panduan
+            to="/docs/administrator/login">
+            Saya Administrator
+          </Link>
+          <Link
+            className="button button--outline button--lg"
+            to="/docs/peserta/login">
+            Saya Peserta
           </Link>
         </div>
+        <a
+          className={styles.telegramLink}
+          href="https://t.me/gosaad02"
+          aria-label="Bergabung diskusi GoSAAD di Telegram">
+          <img src={telegramLogoUrl} alt="" width="28" height="28" />
+          <span>Diskusi bersama di Telegram</span>
+        </a>
       </div>
     </header>
   );
