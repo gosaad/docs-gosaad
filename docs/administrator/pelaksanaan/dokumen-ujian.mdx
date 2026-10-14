@@ -1,0 +1,81 @@
+---
+sidebar_position: 3
+title: Menyiapkan dokumen ujian
+description: Buat preview, unduh, atau cetak kartu peserta, absensi, dan berita acara ujian di GoSAAD.
+---
+
+import ZoomableImage from '@site/src/components/ZoomableImage';
+
+# Menyiapkan dokumen ujian
+
+Gunakan **Dokumen ujian** untuk membuat PDF **Kartu peserta**, **Absensi**, atau **Berita acara**. Atur jenis dokumen, sumber data, ruang, kop dokumen, dan penandatangan terlebih dahulu, lalu buat preview sebelum mengunduh atau mencetaknya.
+
+<ZoomableImage
+  alt="Halaman Dokumen ujian dengan Kartu peserta, pilihan Pelaksanaan sebagai sumber data, ruang, dan Preview PDF"
+  caption="Contoh Kartu peserta: Pelaksanaan memilih Event, lalu preview PDF menampilkan kartu peserta sesuai pilihan ruang."
+  src="/img/pelaksanaan-dokumen-ujian.png"
+/>
+
+## Yang perlu disiapkan
+
+- Anda memiliki akses sebagai **admin** atau **superadmin** untuk membuat PDF.
+- Untuk **Kartu peserta**, Event yang akan digunakan sudah tersedia.
+- Untuk **Absensi** atau **Berita acara**, jadwal ujian yang akan digunakan sudah tersedia.
+
+## Buka Dokumen ujian
+
+1. Pada navigasi sebelah kiri, buka **Pelaksanaan**.
+2. Pilih **Dokumen ujian**.
+3. Di panel **Atur dokumen**, pilih jenis dokumen yang diperlukan.
+
+## Pilih jenis dokumen dan sumber data
+
+Pilih salah satu jenis dokumen berikut.
+
+- **Kartu peserta**: bersumber dari **Pelaksanaan**.
+- **Absensi**: bersumber dari **Jadwal**.
+- **Berita acara**: bersumber dari **Jadwal**.
+
+:::note
+
+Pada **Kartu peserta**, label **Pelaksanaan** berarti **Event**. Jadi, pilih Event pada kolom **Pelaksanaan** untuk menentukan peserta yang akan dicetak kartunya.
+
+:::
+
+1. Untuk **Kartu peserta**, pada bagian **Sumber data** pilih **Pelaksanaan**, lalu pilih Event yang sesuai.
+2. Untuk **Absensi** atau **Berita acara**, pilih **Jadwal ujian** yang sesuai.
+3. Pilih **Ruang** bila dokumen hanya akan dibuat untuk satu ruang. Pilih **Semua ruang** bila dokumen mencakup seluruh ruang.
+
+Saat membuat **Kartu peserta** dengan pilihan **Semua ruang**, peserta yang belum ditempatkan di ruang tetap ikut tercetak. Ruang pada kartu mereka ditampilkan sebagai `-`.
+
+## Atur isi dokumen
+
+1. Buka **Kop dokumen**, lalu isi **Nama instansi**, **Alamat**, **Kontak**, dan bila diperlukan **Catatan kop**.
+2. Buka **Penandatangan**, lalu isi jabatan, nama, dan NIP kepala.
+3. Untuk **Absensi**, isi juga **Kota** bila diperlukan.
+4. Untuk **Berita acara**, isi nama dan NIP proktor serta pengawas, lalu tambahkan **Catatan kejadian** bila ada.
+
+Pada **Kartu peserta**, password peserta ikut tercetak. Dokumen ini hanya dapat dibuat oleh **admin** dan **superadmin**; periksa kembali pemilihan Event dan ruang sebelum membagikannya.
+
+## Buat preview, unduh, atau cetak
+
+1. Klik **Buat preview**.
+2. Periksa isi PDF pada panel **Preview PDF**.
+3. Jika sudah sesuai, klik **Unduh** untuk menyimpan PDF atau **Cetak** untuk mencetaknya.
+
+Tombol **Unduh** dan **Cetak** tersedia setelah preview berhasil dibuat. Bila pengaturan sumber data, ruang, kop, atau penandatangan diubah, buat preview kembali sebelum mengunduh atau mencetak.
+
+## Hasil yang diharapkan
+
+Panel **Preview PDF** menampilkan dokumen sesuai jenis dan sumber data yang dipilih. Header halaman memperlihatkan jenis dokumen, sumbernya—Event untuk **Kartu peserta** atau jadwal untuk dokumen lainnya—serta ruang yang digunakan.
+
+## Jika dokumen tidak dapat dibuat
+
+- Pilih **Pelaksanaan** (Event) untuk **Kartu peserta**, atau **Jadwal ujian** untuk **Absensi** dan **Berita acara**.
+- Jika peserta yang diperlukan tidak muncul pada kartu, periksa Event dan pilihan **Ruang**. Gunakan **Semua ruang** bila peserta berada di beberapa ruang atau belum ditempatkan.
+- Jika tombol **Buat preview** tidak aktif, pastikan sumber data sudah dipilih dan akun Anda memiliki akses **admin** atau **superadmin**.
+- Jika tombol **Cetak** tidak membuka jendela cetak, browser mungkin memblokir jendela baru. Buka preview lalu cetak PDF secara manual.
+
+## Langkah berikutnya
+
+Bagikan **Kartu peserta** sebelum ujian, gunakan **Absensi** saat pelaksanaan, dan simpan **Berita acara** setelah ujian selesai.

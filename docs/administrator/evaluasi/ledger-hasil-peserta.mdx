@@ -1,0 +1,84 @@
+---
+sidebar_position: 3
+title: Melihat ledger hasil peserta
+description: Lihat rekap hasil seluruh peserta dalam satu Event, termasuk peserta yang belum memiliki hasil, di GoSAAD.
+---
+
+import ZoomableImage from '@site/src/components/ZoomableImage';
+
+# Melihat ledger hasil peserta
+
+Gunakan **Ledger hasil peserta** untuk melihat rekap hasil seluruh peserta dalam satu **Event**. Berbeda dari halaman **Hasil ujian** yang berfokus pada satu jadwal, ledger mengumpulkan hasil peserta pada seluruh jadwal dalam Event yang dipilih, termasuk peserta yang belum mempunyai hasil.
+
+<ZoomableImage
+  alt="Halaman Ledger hasil peserta dengan filter Event, jurusan, group, daftar peserta, dan detail hasil per jadwal"
+  caption="Contoh ledger untuk satu Event: buka Detail pada peserta untuk melihat jadwal, sumber soal, mata pelajaran, point, hasil akhir, pelaksanaan, dan statusnya."
+  src="/img/evaluasi-ledger-hasil-peserta.png"
+/>
+
+## Yang perlu disiapkan
+
+- Anda memiliki akses sebagai **admin** atau **superadmin**.
+- Event yang akan direkap sudah tersedia.
+- Data peserta sudah terdaftar pada Event tersebut.
+
+## Pilih Event dan tampilkan peserta
+
+1. Pada navigasi sebelah kiri, buka **Evaluasi**.
+2. Pilih **Ledger hasil peserta**.
+3. Pada filter **Event**, pilih Event yang akan direkap.
+4. Bila diperlukan, pilih **Jurusan** dan/atau **Group**.
+5. Klik **Tampilkan data**.
+
+**Event** adalah filter wajib. **Jurusan** dan **Group** bersifat opsional serta dapat digunakan bersamaan. Setelah Event dipilih, pilihan **Group** hanya menampilkan group yang relevan dengan Event dan jurusan yang dipilih.
+
+## Baca rekap peserta
+
+Setelah filter diterapkan, bagian **Hasil peserta** menampilkan nomor ujian, nama, dan **Jumlah hasil** untuk setiap peserta. Jumlah tersebut menunjukkan berapa hasil jadwal yang tersedia pada peserta tersebut.
+
+Peserta tetap muncul dalam ledger meskipun belum memiliki hasil. Ini membantu pengawas atau admin membedakan peserta yang belum memulai, belum selesai, atau belum memperoleh hasil pada Event tersebut.
+
+Gunakan tombol **Sebelumnya** dan **Berikutnya** untuk berpindah halaman peserta bila jumlahnya banyak.
+
+## Buka detail hasil peserta
+
+1. Pada baris peserta, klik **Detail**.
+2. Periksa tabel detail yang terbuka di bawah baris peserta.
+3. Klik **Tutup** untuk menyembunyikan detail kembali.
+
+Tabel detail menampilkan hasil yang tersedia dengan informasi:
+
+- **Jadwal** beserta tanggal dan waktu mulai;
+- **Banksoal/Paket**;
+- **Matpel**;
+- **Point** dibandingkan dengan point maksimum;
+- **Hasil akhir**;
+- **Pelaksanaan**, yaitu **Reguler** atau informasi **Susulan** bila tersedia;
+- status, seperti **Final**, **Draft**, **Diproses**, **Berlangsung**, atau **Dibatalkan**.
+
+Jika peserta belum memiliki hasil untuk Event itu, detail menampilkan pemberitahuan **Belum ada hasil ujian untuk peserta ini**.
+
+## Download ledger
+
+1. Pilih **Event** dan terapkan filter dengan **Tampilkan data**.
+2. Pastikan daftar peserta sudah sesuai dengan Event, jurusan, dan Group yang Anda butuhkan.
+3. Klik **Download data**.
+4. Tunggu hingga file Excel selesai disiapkan dan unduhan dimulai.
+
+Jika Anda mengubah Event, jurusan, atau Group, klik **Tampilkan data** kembali sebelum mengunduh. Tombol **Download data** tidak digunakan untuk draft filter yang belum diterapkan.
+
+## Hasil yang diharapkan
+
+Ledger menampilkan peserta sesuai Event dan filter tambahan yang aktif. Anda dapat melihat jumlah hasil tiap peserta, membuka detail hasil per jadwal, serta mengunduh rekap yang telah diterapkan.
+
+## Jika data tidak muncul
+
+- Pilih **Event**, karena halaman tidak menampilkan data sebelum Event dipilih.
+- Klik **Reset**, lalu pilih Event kembali bila filter jurusan atau Group terlalu membatasi hasil.
+- Jika kombinasi Event, jurusan, dan Group tidak menemukan peserta, ubah salah satu filter opsional atau gunakan **Semua jurusan** dan **Semua group**.
+- Jika akses ledger ditolak, pastikan Anda menggunakan akun **admin** atau **superadmin**.
+- Jika unduhan gagal, terapkan kembali filter dan coba **Download data** setelah tabel selesai dimuat.
+
+## Langkah berikutnya
+
+Untuk memeriksa jawaban dan nilai pada satu jadwal secara lebih rinci, buka [Hasil ujian](./hasil-ujian).

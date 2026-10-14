@@ -1,0 +1,83 @@
+---
+sidebar_position: 6
+title: Mengelola ujian peserta
+description: Pantau attempt ujian Official peserta serta gunakan Reset ujian atau Force complete secara tepat di GoSAAD.
+---
+
+# Mengelola ujian peserta
+
+Gunakan **Ujian peserta** untuk memantau attempt ujian **Official** peserta dan menjalankan tindakan operasional bila diperlukan. Halaman ini membantu Anda menemukan attempt yang sedang berjalan, sudah selesai, atau dibatalkan; kemudian memeriksa detail peserta sebelum melakukan tindakan.
+
+:::caution
+**Reset ujian tidak mengubah nilai menjadi 0.** Reset menghapus attempt Official peserta beserta jawaban tersimpan dan hasilnya. Karena dampaknya tidak dapat dibatalkan dari halaman ini, selalu periksa peserta dan jadwal pada dialog konfirmasi sebelum memilih **Reset ujian**.
+:::
+
+## Yang perlu disiapkan
+
+- Anda memiliki akses ke menu **Ujian peserta**.
+- Jadwal Official dan attempt peserta yang ingin diperiksa sudah tersedia.
+- Siapkan nama schedule, nomor ujian, atau bank soal bila Anda ingin mempersempit daftar.
+
+## Buka daftar ujian peserta
+
+1. Pada navigasi sebelah kiri, buka **Pelaksanaan**.
+2. Pilih **Ujian peserta**.
+3. Halaman awal menampilkan filter dengan status **Berjalan** serta ringkasan jumlah attempt pada bagian atas.
+4. Klik **Reload data** untuk memuat daftar kembali, atau gunakan **Sembunyikan filter** bila ruang daftar ingin diperluas.
+
+Ringkasan **Total hasil**, **Halaman ini**, **Berjalan**, dan **Selesai** membantu membedakan jumlah attempt sesuai filter dengan jumlah baris pada halaman yang sedang dibuka.
+
+## Cari attempt peserta
+
+1. Pada **Schedule**, pilih jadwal Official yang ingin diperiksa.
+2. Pada **Peserta**, cari berdasarkan nomor ujian atau nama peserta.
+3. Pilih **Status**: **Berjalan**, **Selesai**, atau **Dibatalkan**.
+4. Pilih **Bank soal** bila sumber soal jadwal menggunakan bank soal langsung.
+5. Atur **Per halaman**, lalu klik **Filter data**.
+
+Klik **Reset** untuk mengembalikan filter. Filter **Bank soal** tidak berlaku ketika schedule memakai **Kapita Selekta**; halaman akan menandainya sebagai tidak berlaku.
+
+## Periksa detail sebelum bertindak
+
+1. Buka detail attempt peserta dari daftar.
+2. Periksa nomor ujian, nama peserta, schedule, bank soal, status, waktu mulai, dan deadline yang ditampilkan.
+3. Pastikan tindakan yang akan dipilih sesuai kondisi attempt.
+
+Jangan memakai **Ujian peserta** untuk melepas perangkat login. Bila masalahnya adalah perangkat peserta masih terikat, gunakan [Reset login peserta](./login-peserta).
+
+## Reset attempt ujian
+
+Gunakan **Reset ujian** sebagai pembersihan administratif untuk attempt Official yang **Berjalan** atau **Selesai**.
+
+1. Temukan attempt peserta, kemudian klik **Reset ujian** pada baris daftar atau di detail attempt.
+2. Baca bagian **Dampak reset** pada dialog konfirmasi. Pastikan nomor ujian, peserta, dan schedule sudah benar.
+3. Klik **Reset ujian** untuk mengonfirmasi.
+
+Setelah reset, attempt Official, jawaban tersimpan, dan hasil attempt tersebut dihapus. Peserta hanya dapat memulai attempt baru apabila masih memenuhi eligibility schedule yang berlaku. Reset tidak mereset login atau perangkat peserta, dan tidak memengaruhi **Quick mode**.
+
+## Selesaikan attempt yang sudah expired
+
+**Force complete** berbeda dari reset. Tindakan ini menyelesaikan attempt **Berjalan** yang sudah expired melalui proses auto-submit; attempt tidak dihapus.
+
+1. Buka attempt peserta yang berstatus **Berjalan** dan sudah melewati batas waktunya.
+2. Klik **Force complete**.
+3. Periksa deadline pada dialog, lalu klik **Force complete** untuk mengonfirmasi.
+
+Tombol ini belum dapat dipakai jika attempt belum melewati grace period force complete. Jika dipaksakan sebelum expired, proses akan ditolak.
+
+Untuk memproses seluruh attempt expired pada satu schedule, pilih **Schedule** terlebih dahulu, klik **Filter data**, lalu pilih **Force complete expired**. Proses batch mencari attempt Berjalan yang expired pada schedule itu; hasilnya dapat berupa completed, failed, atau skipped. Tindakan batch ini juga bukan reset.
+
+## Hasil yang diharapkan
+
+Anda dapat menemukan attempt Official sesuai schedule atau peserta, memeriksa konteksnya, lalu menjalankan tindakan yang tepat. Reset menghapus attempt dan hasil lama, sedangkan **Force complete** menyelesaikan attempt expired tanpa menghapusnya.
+
+## Jika tindakan tidak tersedia atau gagal
+
+- **Reset ujian** hanya tersedia pada attempt Official berstatus **Berjalan** atau **Selesai**. Periksa filter **Status** dan buka detail attempt yang benar.
+- **Force complete** tidak aktif bila attempt belum melewati grace period. Tunggu hingga attempt expired, lalu muat data kembali.
+- Jika hasil pencarian kosong, klik **Reset** pada filter dan cari kembali menggunakan **Schedule** atau **Peserta**.
+- Jika peserta perlu mengerjakan kembali sesudah reset tetapi tidak dapat memulai ujian, periksa apakah ia masih memenuhi eligibility schedule. Reset tidak mengubah ketentuan jadwal.
+
+## Langkah berikutnya
+
+Untuk melihat koneksi, perangkat, dan status peserta secara langsung selama pelaksanaan, buka [Monitor peserta](./monitor-peserta).

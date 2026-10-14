@@ -1,0 +1,69 @@
+---
+sidebar_position: 4
+title: Reset login peserta
+description: Pantau perangkat yang terikat dengan login peserta dan reset binding saat peserta perlu berpindah perangkat.
+---
+
+# Reset login peserta
+
+Gunakan **Login peserta** untuk melihat peserta yang memiliki perangkat login terikat selama ujian. Bila binding perangkat masih menghalangi peserta untuk berpindah perangkat, gunakan **Reset login** agar peserta dapat login dan verifikasi ulang dari perangkat yang dipakai.
+
+## Yang perlu disiapkan
+
+- Anda memiliki akses ke menu **Login peserta**.
+- Anda mengetahui nomor ujian, jurusan, atau group peserta yang memerlukan bantuan.
+- Peserta sudah memberi tahu pengawas bahwa ia perlu berpindah perangkat atau tidak dapat melanjutkan login.
+
+## Buka dan cari login peserta
+
+1. Pada navigasi sebelah kiri, buka **Pelaksanaan**.
+2. Pilih **Login peserta**.
+3. Gunakan **Jurusan**, **Grup**, atau **No ujian** pada **Filter data peserta login** untuk menemukan peserta.
+4. Klik **Filter data**.
+
+Tabel **Login peserta** hanya menampilkan peserta dengan device login yang terdaftar pada filter aktif. Gunakan **Reload data** bila data binding perlu dimuat kembali.
+
+## Periksa status binding perangkat
+
+Pada tabel, periksa **Nama peserta**, perangkat yang terdaftar, dan **Status login**.
+
+- Status seperti **Terhubung** atau **Terputus** menunjukkan keadaan koneksi perangkat yang tercatat.
+- Jika binding masih menghalangi perpindahan perangkat, peserta dapat ditandai sebagai login yang memblokir.
+- Status **Ujian selesai — binding masih aktif** berarti ujian peserta sudah selesai, tetapi binding perangkat belum dilepas oleh waktu rilis server.
+
+## Reset binding satu peserta
+
+1. Temukan peserta pada tabel.
+2. Klik **Reset login** pada kolom **Aksi**.
+3. Periksa nama dan nomor ujian peserta pada dialog konfirmasi.
+4. Klik **Reset login** untuk mengonfirmasi.
+5. Minta peserta login dan verifikasi ulang dari perangkat yang akan digunakan.
+
+:::caution
+
+Gunakan **Reset login** hanya saat memang diperlukan. Reset menghapus binding perangkat login sehingga peserta harus melakukan login dan verifikasi ulang.
+
+:::
+
+## Reset beberapa peserta
+
+1. Centang peserta yang perlu direset pada tabel.
+2. Klik **Reset login terpilih**.
+3. Periksa daftar peserta pada dialog konfirmasi, lalu lanjutkan dengan **Reset _n_ peserta**.
+
+Pilihan ini hanya berlaku untuk peserta yang dicentang pada halaman tabel saat ini.
+
+## Hasil yang diharapkan
+
+Binding perangkat login peserta yang dipilih dilepas. Peserta dapat login dan verifikasi ulang dari perangkat lain. Reset login tidak menghapus jawaban, nilai, attempt ujian, ataupun data peserta.
+
+## Jika reset tidak menyelesaikan masalah
+
+- Pastikan Anda memilih peserta yang tepat melalui **No ujian** dan periksa kembali statusnya setelah klik **Reload data**.
+- Jika tabel kosong, longgarkan filter **Jurusan**, **Grup**, atau **No ujian**. Peserta tanpa device login terdaftar tidak akan muncul pada tabel ini.
+- Jika peserta sudah menyelesaikan ujian tetapi masih terikat, gunakan **Reset login** untuk melepas binding lebih awal bila peserta memang perlu berpindah perangkat.
+- Setelah reset, minta peserta melakukan login dan verifikasi ulang. Jika masih gagal, periksa kembali jadwal ujian yang tersedia untuk peserta tersebut.
+
+## Langkah berikutnya
+
+Setelah peserta berhasil masuk kembali, lanjutkan pemantauan dari menu **Monitor peserta**.

@@ -45,6 +45,19 @@ const sidebars: SidebarsConfig = {
       items: [
         'administrator/pelaksanaan/tambah-jadwal',
         'administrator/pelaksanaan/token-ujian',
+        'administrator/pelaksanaan/dokumen-ujian',
+        'administrator/pelaksanaan/login-peserta',
+        'administrator/pelaksanaan/monitor-peserta',
+        'administrator/pelaksanaan/ujian-peserta',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Evaluasi',
+      items: [
+        'administrator/evaluasi/koreksi',
+        'administrator/evaluasi/hasil-ujian',
+        'administrator/evaluasi/ledger-hasil-peserta',
       ],
     },
     {

@@ -1,0 +1,72 @@
+---
+sidebar_position: 5
+title: Memantau peserta ujian
+description: Pantau koneksi, ruang, perangkat, dan status ujian peserta saat pelaksanaan di GoSAAD.
+---
+
+# Memantau peserta ujian
+
+Gunakan **Monitor peserta** untuk melihat koneksi, ruang, perangkat, dan status ujian peserta saat pelaksanaan. Halaman ini menyediakan konteks langsung untuk membantu pengawas menindaklanjuti peserta yang terputus atau membutuhkan bantuan.
+
+## Yang perlu disiapkan
+
+- Anda memiliki akses ke menu **Monitor peserta**.
+- Event atau jadwal ujian yang akan dipantau sudah tersedia.
+- Bila mencari satu peserta, siapkan nomor ujiannya.
+
+## Buka Monitor peserta
+
+1. Pada navigasi sebelah kiri, buka **Pelaksanaan**.
+2. Pilih **Monitor peserta**.
+3. Perhatikan badge **Live context**, **Auto 45 detik**, dan **Akses aktif** di bagian atas halaman.
+
+Data monitor diperbarui otomatis sesuai interval yang ditampilkan pada badge. Klik **Refresh** bila Anda perlu memuat data kembali tanpa menunggu pembaruan otomatis.
+
+## Saring peserta yang dipantau
+
+Gunakan filter untuk mempersempit daftar peserta.
+
+1. Pilih **Event** atau **Jadwal** untuk memantau satu pelaksanaan atau jadwal tertentu.
+2. Tambahkan filter **Jurusan**, **Grup**, atau **Ruang** bila diperlukan.
+3. Isi **No ujian** untuk mencari peserta tertentu.
+4. Pada **Cakupan**, pilih **Sedang dipantau** untuk melihat peserta dengan konteks monitor aktif, atau **Semua peserta** untuk memperluas daftar.
+5. Gunakan **Koneksi** dan **Status ujian** untuk mencari kondisi tertentu.
+6. Klik **Tampilkan data**.
+
+Klik **Reset** untuk menghapus filter yang aktif. Pilihan **Per halaman** hanya mengatur jumlah baris daftar, bukan angka ringkasan.
+
+## Membaca ringkasan monitor
+
+Bagian **Ringkasan seluruh hasil** menghitung peserta lintas halaman berdasarkan filter utama. Angka tersebut berbeda dari daftar peserta yang memakai pagination server.
+
+- **Terhubung**: perangkat peserta sedang terhubung.
+- **Tidak terhubung**: perangkat peserta terdeteksi tidak terhubung.
+- **Belum diketahui**: status koneksi belum tersedia.
+- **Tidak dipantau**: koneksi belum relevan untuk dipantau pada konteks peserta tersebut.
+- **Aktif ujian**: peserta sedang mengerjakan ujian.
+
+Gunakan ringkasan untuk melihat kondisi umum, lalu gunakan daftar di bawahnya untuk menemukan peserta yang perlu diperiksa.
+
+## Periksa detail peserta
+
+1. Buka detail peserta dari daftar monitor.
+2. Periksa bagian **Peserta** untuk nomor ujian, jurusan, group, dan ruang.
+3. Periksa bagian **Ujian** untuk Event, jadwal, status attempt, waktu mulai, dan waktu selesai.
+4. Periksa bagian **Device** untuk koneksi, sistem operasi, perangkat, browser, IP address, **Last verified**, dan **Last seen**.
+
+Jika peserta pernah keluar dari area ujian, detail peserta menampilkan pemberitahuan jumlah kejadian tersebut. Gunakan informasi ini sebagai bahan pemeriksaan pengawas.
+
+## Hasil yang diharapkan
+
+Daftar monitor menampilkan peserta sesuai filter dengan kondisi koneksi dan status ujian terkini. Detail peserta memberikan konteks perangkat dan ujian yang cukup untuk menentukan apakah pengawas perlu menghubungi peserta atau memeriksa perangkatnya.
+
+## Jika data monitor tidak tersedia
+
+- Pastikan filter **Event**, **Jadwal**, **Jurusan**, **Grup**, dan **Ruang** sesuai. Klik **Reset**, lalu coba kembali dengan filter yang lebih longgar.
+- Ubah **Cakupan** ke **Semua peserta** bila peserta tidak muncul pada pilihan **Sedang dipantau**.
+- Jika statusnya **Belum diketahui**, tunggu pembaruan otomatis atau klik **Refresh** untuk memuat data terbaru.
+- Jika peserta **Tidak terhubung**, periksa perangkat dan koneksi peserta terlebih dahulu. Gunakan detail peserta untuk melihat informasi perangkat dan waktu terakhir terdeteksi.
+
+## Langkah berikutnya
+
+Bila peserta tidak dapat melanjutkan karena perangkat login masih terikat, buka [Reset login peserta](./login-peserta) untuk melepas binding perangkatnya.

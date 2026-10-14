@@ -1,0 +1,92 @@
+---
+sidebar_position: 1
+title: Mengoreksi jawaban essay
+description: Nilai jawaban essay secara anonim dengan rubrik dan gunakan saran Jaccard sebagai bantuan di GoSAAD.
+---
+
+import ZoomableImage from '@site/src/components/ZoomableImage';
+
+# Mengoreksi jawaban essay
+
+Gunakan **Koreksi** untuk memberi nilai pada jawaban **Essay** secara anonim. Halaman ini menampilkan soal, rubrik atau kunci jawaban, jawaban peserta, serta panel **Bantuan koreksi** untuk membantu pengoreksi menentukan nilai.
+
+<ZoomableImage
+  alt="Halaman Koreksi dengan antrean jawaban essay, soal, rubrik atau KJ, jawaban anonim, bantuan Jaccard, dan nilai final"
+  caption="Contoh workspace Koreksi: pilih jawaban dari antrean, periksa soal dan Rubrik / KJ, lalu gunakan saran Jaccard sebagai bahan penilaian sebelum menyimpan nilai final."
+  src="/img/evaluasi-koreksi-jaccard.png"
+/>
+
+:::note
+Identitas peserta disembunyikan pada area jawaban. Gunakan isi jawaban dan rubrik sebagai dasar penilaian.
+:::
+
+## Yang perlu disiapkan
+
+- Anda memiliki akses ke menu **Koreksi**.
+- Bank soal yang memuat soal Essay sudah tersedia.
+- Bila akan membatasi koreksi pada satu pelaksanaan, siapkan jadwal yang menggunakan bank soal tersebut.
+- Rubrik atau kunci jawaban tersedia bila Anda ingin menggunakan saran Jaccard.
+
+## Buka workspace koreksi
+
+1. Pada navigasi sebelah kiri, buka **Evaluasi**.
+2. Pilih **Koreksi**.
+3. Perhatikan badge **Anonim** dan ringkasan tipe **Essay** pada bagian atas halaman.
+4. Pada bagian scope, pilih **Bank soal**.
+5. Pilih **Jadwal** bila ingin mengoreksi jawaban dari jadwal tertentu.
+6. Atur **Per halaman**, lalu klik **Tampilkan jawaban**.
+
+Pilih **Muat ulang** untuk memperbarui antrian. Jika bank soal diganti, pilih kembali jadwal yang tersedia untuk bank soal baru tersebut, lalu terapkan scope lagi. Untuk pengguna dengan label **Jadwal wajib**, jadwal harus dipilih sebelum jawaban dapat ditampilkan.
+
+## Baca area koreksi
+
+Pilih satu jawaban dari antrian di sisi kiri. Workspace menampilkan:
+
+- **Soal**: materi yang dinilai.
+- **Rubrik / KJ**: acuan pemberian nilai.
+- **Jawaban peserta**: jawaban tanpa identitas peserta.
+- **Nilai final**: kolom untuk memasukkan poin dari 0 hingga nilai maksimum soal.
+
+Label **Tersimpan** pada antrian menunjukkan jawaban sudah dikoreksi. Gunakan **Belum dikoreksi berikutnya**, **Sebelumnya**, atau **Berikutnya** untuk berpindah jawaban.
+
+## Gunakan saran Jaccard
+
+Jaccard adalah bantuan untuk membandingkan kemiripan jawaban peserta dengan rubrik atau kunci jawaban. Hasilnya ditampilkan sebagai persentase **Similar** dan **Saran nilai**.
+
+1. Pastikan **Rubrik / KJ** dan jawaban peserta tersedia.
+2. Pada panel **Bantuan koreksi**, klik **Cek ulang Jaccard**.
+3. Periksa nilai **Similar**, **Saran nilai**, dan ringkasan rubrik yang ditampilkan.
+4. Jika saran sesuai penilaian Anda, klik **Gunakan saran Jaccard** untuk mengisi kolom **Nilai**.
+5. Tinjau kembali nilai pada kolom **Nilai**, lalu klik **Simpan nilai**.
+
+:::caution
+Jaccard hanya saran, bukan penetapan nilai otomatis. Pengoreksi tetap menentukan nilai final dan wajib menyimpannya dengan **Simpan nilai**.
+:::
+
+Jika jawaban sudah pernah dikoreksi lalu nilainya diubah, aplikasi meminta konfirmasi sebelum menimpa nilai tersimpan.
+
+## Simpan nilai manual
+
+Anda dapat menetapkan nilai tanpa memakai saran Jaccard.
+
+1. Baca soal, rubrik, dan jawaban anonim.
+2. Masukkan nilai pada kolom **Nilai** sesuai batas maksimum yang ditampilkan.
+3. Periksa teks **Preview** untuk melihat nilai dibandingkan maksimum soal.
+4. Klik **Simpan nilai**.
+
+Nilai yang disimpan menjadi nilai final jawaban tersebut. Jangan berpindah jawaban sebelum menyimpan perubahan; aplikasi akan memberi peringatan bahwa input nilai saat ini akan dibuang bila Anda melanjutkan.
+
+## Hasil yang diharapkan
+
+Jawaban Essay pada scope yang dipilih dapat dinilai secara anonim. Setiap nilai final tersimpan pada jawaban terkait, sementara Jaccard membantu memberi indikasi kemiripan dan saran nilai yang tetap dapat ditinjau oleh pengoreksi.
+
+## Jika saran Jaccard tidak tersedia
+
+- Pastikan **Rubrik / KJ** tersedia. Tanpa rubrik, **Cek ulang Jaccard** tidak dapat dijalankan.
+- Pastikan jawaban peserta tersedia. Jawaban kosong tidak dapat diperiksa dengan Jaccard.
+- Bila antrian belum muncul, pilih **Bank soal**, kemudian pilih **Jadwal** bila diperlukan, lalu klik **Tampilkan jawaban**.
+- Bila nilai tidak dapat disimpan, periksa bahwa nilainya berada antara 0 dan nilai maksimum soal yang ditampilkan.
+
+## Langkah berikutnya
+
+Setelah koreksi selesai, lanjutkan ke halaman **Hasil ujian** untuk meninjau hasil peserta.

@@ -1,0 +1,108 @@
+---
+sidebar_position: 2
+title: Melihat hasil ujian
+description: Pantau nilai, point, durasi, dan status hasil peserta berdasarkan jadwal di GoSAAD.
+---
+
+import ZoomableImage from '@site/src/components/ZoomableImage';
+
+# Melihat hasil ujian
+
+Gunakan **Hasil ujian** untuk melihat nilai, point, durasi pengerjaan, dan status hasil peserta pada satu jadwal. Anda dapat mempersempit hasil menurut jurusan, grup, status, atau peserta; membuka rincian jawaban; mengunduh data; serta mencetak naskah soal untuk jadwal yang dipilih.
+
+<ZoomableImage
+  alt="Halaman Hasil ujian dengan filter bank soal dan jadwal, ringkasan hasil, tabel nilai peserta, serta tombol Detail jawaban"
+  caption="Contoh Hasil ujian dengan scope bank soal dan jadwal aktif. Tabel menampilkan nilai, point, durasi, status final, dan akses ke Detail jawaban."
+  src="/img/evaluasi-hasil-ujian.png"
+/>
+
+## Yang perlu disiapkan
+
+- Anda memiliki akses ke menu **Hasil ujian**.
+- Bank soal dan jadwal yang akan diperiksa sudah tersedia.
+- Peserta sudah menyelesaikan ujian bila hasil yang dicari belum tersedia.
+
+## Pilih bank soal dan jadwal
+
+Bank soal dan jadwal adalah scope utama halaman hasil.
+
+1. Pada navigasi sebelah kiri, buka **Evaluasi**.
+2. Pilih **Hasil ujian**.
+3. Pada **Bank soal wajib**, pilih bank soal yang ingin diperiksa.
+4. Setelah itu, pada **Jadwal wajib**, pilih jadwal yang tersedia untuk bank soal tersebut.
+5. Klik **Tampilkan hasil**.
+
+Halaman menampilkan badge **Scope aktif** setelah bank soal dan jadwal diterapkan. Jika baru mengganti bank soal, pilih kembali jadwal yang sesuai sebelum menampilkan hasil.
+
+## Saring dan urutkan hasil
+
+Setelah scope aktif, gunakan filter tambahan bila diperlukan.
+
+1. Pilih **Jurusan** atau **Grup** untuk membatasi peserta.
+2. Pada **Status**, pilih **Draft** atau **Final**, atau biarkan **Semua status**.
+3. Isi **Cari nama/no ujian** untuk mencari peserta tertentu.
+4. Atur **Per halaman**, lalu klik **Tampilkan hasil**.
+5. Pada bagian **Tabel hasil ujian**, pilih dasar urutan: **Nilai**, **Point**, **Durasi**, **No ujian**, **Nama**, atau **Diperbarui**.
+6. Klik tombol **Turun** atau **Naik** untuk mengubah arah urutan.
+
+Klik **Reset** untuk mengembalikan filter, halaman, dan urutan ke keadaan awal. Gunakan **Muat ulang** untuk memperbarui daftar tanpa mengubah filter yang sudah diterapkan.
+
+## Baca ringkasan dan tabel hasil
+
+Ringkasan menampilkan **Total sesuai filter**, **Final halaman ini**, **Draft halaman ini**, **Rata-rata nilai**, dan **Belum dikoreksi**. Angka bertanda *halaman ini* hanya menghitung baris pada halaman daftar yang sedang dibuka.
+
+Tabel menampilkan informasi berikut untuk setiap peserta:
+
+- nama dan nomor ujian;
+- jurusan dan grup;
+- **Nilai**;
+- **Point** dibandingkan dengan point maksimum;
+- **Durasi** pengerjaan;
+- status **Draft** atau **Final**.
+
+## Periksa dan cetak detail jawaban
+
+1. Pada peserta yang ingin diperiksa, klik **Detail jawaban**.
+2. Periksa ringkasan peserta, jadwal, sumber soal, status hasil, serta jawaban yang ditampilkan.
+3. Klik **Cetak perbandingan jawaban** bila Anda perlu menyiapkan cetakan detail jawaban.
+
+Gunakan **Soal ujian** di bagian atas halaman untuk membuka preview dan mencetak satu naskah soal untuk jadwal yang sedang dipilih.
+
+## Unduh data hasil
+
+1. Pastikan scope bank soal dan jadwal sudah aktif serta filter sudah diterapkan.
+2. Klik **Download data**.
+3. Tunggu hingga file disiapkan dan unduhan dimulai.
+
+Jika Anda mengubah filter namun belum menekan **Tampilkan hasil**, terapkan dahulu filter tersebut sebelum mengunduh agar data unduhan sesuai dengan scope yang diinginkan.
+
+## Regenerate nilai
+
+Tombol **Regenerate nilai** tersedia untuk **admin** dan **superadmin** ketika scope sudah aktif. Gunakan hanya saat nilai pada jadwal perlu dihitung ulang.
+
+1. Pilih bank soal dan jadwal, lalu klik **Tampilkan hasil**.
+2. Klik **Regenerate nilai**.
+3. Periksa nama jadwal pada dialog konfirmasi.
+4. Klik **Regenerate nilai** untuk melanjutkan.
+
+:::caution
+Regenerate menghitung ulang hasil peserta yang sudah selesai pada seluruh jadwal terpilih. Filter tabel seperti jurusan, grup, status, atau pencarian peserta **tidak** membatasi proses ini. Setelah selesai, halaman memuat ulang daftar dan menampilkan jumlah hasil berhasil, gagal, serta dilewati.
+:::
+
+Data historis tetap disimpan apabila regenerate tidak tersedia untuk attempt lama yang belum memiliki snapshot soal, tetapi hasil tersebut tidak dapat dihitung ulang dari halaman ini.
+
+## Hasil yang diharapkan
+
+Anda memperoleh daftar hasil yang sesuai dengan bank soal dan jadwal, dapat menyaring serta mengurutkan peserta, membuka detail jawaban, mengunduh data, atau mencetak naskah dan perbandingan jawaban bila diperlukan.
+
+## Jika hasil tidak muncul
+
+- Pastikan **Bank soal wajib** dan **Jadwal wajib** sudah dipilih. Jadwal baru dapat dipilih setelah bank soal dipilih.
+- Jika tabel kosong, coba ubah **Status**, jurusan, grup, atau kata kunci peserta. Klik **Reset** untuk memperluas kembali hasil.
+- Jika peserta sudah menyelesaikan ujian tetapi belum ada hasil, gunakan **Regenerate nilai** bila Anda adalah admin atau superadmin dan sudah memastikan jadwal yang dipilih benar.
+- Jika **Download data** tidak aktif, terapkan filter dahulu dengan **Tampilkan hasil**.
+- Jika Anda tidak dapat membuka **Detail jawaban**, klik **Muat ulang** dan coba lagi setelah data detail selesai dimuat.
+
+## Langkah berikutnya
+
+Bila masih ada jawaban Essay yang belum dinilai, kembali ke [Koreksi](./koreksi) sebelum meninjau hasil final.
