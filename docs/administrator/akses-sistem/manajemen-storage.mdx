@@ -1,0 +1,132 @@
+---
+title: Memindai dan menghapus file tidak terpakai
+description: Jalankan scan manual, periksa kandidat file storage, dan hapus file orphan dengan aman di GoSAAD.
+---
+
+import ZoomableImage from '@site/src/components/ZoomableImage';
+
+# Memindai dan menghapus file tidak terpakai
+
+Gunakan **Manajemen Storage** untuk memeriksa file upload yang tidak lagi dipakai oleh data aktif. Halaman ini memakai alur manual: pilih kategori, jalankan scan, periksa hasilnya, kemudian hapus kandidat yang sudah ditemukan bila memang diperlukan.
+
+Penghapusan tidak berjalan otomatis. File yang ditampilkan sebagai **Masih dipakai** hanya tersedia untuk observasi dan tidak ikut dihapus.
+
+## Yang perlu disiapkan
+
+- Anda memiliki akses ke menu **Manajemen Storage** dan kebutuhan yang jelas untuk memeriksa file tidak terpakai.
+- Anda tahu kategori file yang ingin diperiksa: **Gambar**, **Audio**, atau **Referensi**.
+- Anda siap meninjau hasil scan sebelum memilih tindakan penghapusan.
+
+:::caution
+Gunakan tombol **Hapus file tidak terpakai** hanya setelah hasil scan masih berlaku dan kandidat benar-benar sudah ditinjau. Jalankan scan ulang jika ada perubahan file atau data sejak scan sebelumnya.
+:::
+
+## Buka halaman Manajemen Storage
+
+1. Pada navigasi sebelah kiri, buka **Akses & Sistem**.
+2. Pilih **Manajemen Storage**.
+3. Periksa panel **Scan file tidak terpakai** yang berlabel **Manual scan**.
+
+Panel ini menjelaskan alur aman: pilih kategori, jalankan scan, lalu hapus hanya sesudah ada file orphan. Status **Tidak otomatis** berarti halaman tidak melakukan scan maupun penghapusan sendiri.
+
+## Pilih kategori dan jalankan scan
+
+1. Pada bagian **Kategori**, centang satu atau lebih pilihan:
+   - **Gambar** untuk gambar soal dan gambar opsi jawaban.
+   - **Audio** untuk audio listening yang tersimpan.
+   - **Referensi** untuk file referensi bank soal.
+2. Pada **Limit tampilan**, pilih jumlah item yang ingin ditampilkan. Pilihan yang tersedia adalah 50, 100, 250, atau 500 item.
+3. Centang **Tampilkan file aktif** bila Anda perlu melihat file yang masih dipakai sebagai konteks observasi.
+4. Klik **Scan file tidak terpakai**.
+5. Tunggu hingga notifikasi hasil scan tampil.
+
+Anda harus memilih minimal satu kategori. Jika tidak, halaman menampilkan pesan **Pilih minimal satu kategori storage untuk discan.**
+
+<ZoomableImage
+  alt="Halaman Manajemen Storage dengan pilihan kategori, limit tampilan, scan manual, dan ringkasan hasil"
+  caption="Contoh hasil scan: kartu ringkasan memisahkan file orphan dan file aktif. File aktif dapat ditampilkan untuk observasi, tetapi tidak menjadi kandidat penghapusan."
+  src="/img/akses-sistem-manajemen-storage-scan.png"
+/>
+
+## Membaca hasil scan
+
+Setelah scan selesai, periksa bagian berikut sebelum melakukan penghapusan:
+
+- **Status scan storage** menunjukkan apakah **Storage aman**, **Perlu ditinjau**, atau **Scan kedaluwarsa**.
+- **Orphan tampil** menunjukkan jumlah kandidat file tidak terpakai yang sedang terlihat pada daftar.
+- **Aktif tampil** menunjukkan jumlah file aktif yang dimunculkan karena opsi observasi dipilih.
+- **Berlaku sampai** menunjukkan batas waktu hasil scan dapat dipakai untuk penghapusan.
+- **File orphan** menunjukkan seluruh jumlah file tidak terpakai yang ditemukan.
+- **Estimasi ukuran** menunjukkan perkiraan ukuran file orphan.
+- **File aktif** menunjukkan jumlah file yang masih dipakai di antara file yang diperiksa.
+- **Scan kedaluwarsa** menunjukkan waktu batas scan dan **Scan ID** yang terkait dengan hasil tersebut.
+
+Jika daftar dibatasi oleh **Limit tampilan**, halaman memberi informasi bahwa ringkasan tetap menghitung semua file yang ditemukan meskipun hanya sebagian baris ditampilkan.
+
+## Memeriksa kandidat file storage
+
+Di bagian **Kandidat file storage**, periksa setiap baris pada tabel sebelum memilih penghapusan.
+
+| Kolom | Cara membaca |
+| --- | --- |
+| **Tipe** | Kategori file: **Gambar**, **Audio**, atau **Referensi**. |
+| **Path** | Lokasi file yang ditemukan. Gunakan untuk mengenali konteks file, bukan untuk mengubahnya dari halaman ini. |
+| **Ukuran** | Ukuran file kandidat. |
+| **Dimodifikasi** | Waktu file terakhir diubah. |
+| **Reason** | Status apakah file **Masih dipakai** atau **Tidak direferensikan**. |
+
+- **Masih dipakai** berarti file hanya ditampilkan untuk observasi dan tidak ikut dihapus.
+- **Tidak direferensikan** berarti file menjadi kandidat hapus setelah pengecekan ulang saat tindakan penghapusan dijalankan.
+
+<ZoomableImage
+  alt="Tabel kandidat file storage dengan status Masih dipakai dan Tidak direferensikan"
+  caption="Periksa kolom Reason terlebih dahulu. Baris Masih dipakai tetap aman karena hanya muncul sebagai observasi; baris Tidak direferensikan adalah kandidat penghapusan."
+  src="/img/akses-sistem-manajemen-storage-kandidat.png"
+/>
+
+## Hapus file orphan
+
+Tombol **Hapus file tidak terpakai** tersedia setelah scan menemukan file orphan dan hasil scan belum kedaluwarsa.
+
+1. Pastikan **Status scan storage** tidak menunjukkan **Scan kedaluwarsa**.
+2. Tinjau kandidat pada tabel, terutama baris berstatus **Tidak direferensikan**.
+3. Klik **Hapus file tidak terpakai**.
+4. Pada dialog **Hapus file orphan?**, periksa **Scan ID**, jumlah **File orphan**, dan **Ukuran**.
+5. Baca peringatan yang mengingatkan Anda untuk menjalankan scan ulang jika data berubah.
+6. Klik **Hapus orphan** untuk mengonfirmasi, atau **Batal** untuk kembali tanpa menghapus.
+7. Setelah notifikasi **Penghapusan masuk antrean** tampil, klik **Refresh status manual** untuk melihat perkembangannya.
+
+Saat konfirmasi dijalankan, sistem mengecek kembali penggunaan file. File yang kembali dipakai setelah scan akan dilewati.
+
+## Membaca status penghapusan
+
+Setelah tindakan dikonfirmasi, halaman menampilkan **Status penghapusan** dan ringkasan berikut:
+
+- **Terhapus**: jumlah file yang berhasil dihapus.
+- **Ukuran**: total ukuran file yang berhasil dihapus.
+- **Dilewati**: jumlah kandidat yang tidak diproses untuk dihapus.
+- **Gagal**: jumlah kandidat yang tidak berhasil dihapus.
+
+Gunakan **Refresh status manual** sampai status dan daftar hasil sudah diperbarui. Detail hasil per file dapat memakai status berikut:
+
+- **Terhapus** untuk file yang telah dihapus.
+- **Dipakai lagi** atau **Dilewati** untuk kandidat yang tidak jadi dihapus.
+- **Tidak ditemukan** bila file tidak tersedia saat diproses.
+- **Gagal** bila tindakan tidak berhasil untuk file tersebut.
+
+## Hasil yang diharapkan
+
+Anda dapat menjalankan scan manual berdasarkan kategori pilihan, membedakan file yang aktif dan kandidat orphan, serta menghapus hanya kandidat dari scan yang masih berlaku. Setelah penghapusan dikonfirmasi, Anda dapat memantau hasilnya melalui **Refresh status manual**.
+
+## Jika scan atau penghapusan tidak dapat dilakukan
+
+- Jika muncul **Akses ditolak**, akun yang digunakan belum memiliki izin scan atau hapus file storage. Hubungi Super Admin.
+- Jika muncul **Scan gagal**, periksa kembali kategori yang dipilih dan klik **Scan file tidak terpakai** lagi.
+- Jika hasil menunjukkan **Scan kedaluwarsa**, jalankan scan ulang sebelum membuka dialog penghapusan.
+- Jika tombol **Hapus file tidak terpakai** tidak aktif, pastikan scan menemukan file orphan dan hasilnya belum kedaluwarsa.
+- Jika Anda hanya melihat file **Masih dipakai**, tidak ada kandidat yang dapat dihapus pada daftar tersebut.
+- Jika status penghapusan belum berubah, klik **Refresh status manual**. Halaman tidak memperbarui progres secara otomatis.
+
+## Langkah berikutnya
+
+Gunakan [Diagnostik Sistem](./diagnostik-sistem) bila Anda perlu memantau kondisi operasional melalui snapshot antarmuka sebelum atau sesudah menjalankan pekerjaan administrasi.

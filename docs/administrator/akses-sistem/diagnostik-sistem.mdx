@@ -1,0 +1,144 @@
+---
+title: Memantau Diagnostik Sistem
+description: Baca snapshot kesehatan sistem, periksa panel diagnostik, dan gunakan aksi teknis dengan aman di GoSAAD.
+---
+
+import ZoomableImage from '@site/src/components/ZoomableImage';
+
+# Memantau Diagnostik Sistem
+
+Gunakan **Diagnostik Sistem** untuk memantau snapshot kondisi sistem yang tampil saat ini. Halaman ini membantu **Super Admin** melihat ringkasan cache, memori, aktivitas data, serta permintaan berulang dari halaman browser sebelum melakukan tindak lanjut operasional.
+
+Panduan ini menjelaskan penggunaan antarmuka. Gunakan tindakan teknis hanya bila Anda memahami dampaknya dan sesuai prosedur operasional sekolah atau organisasi.
+
+## Yang perlu disiapkan
+
+- Anda menggunakan akun **Super Admin** dengan akses ke **Diagnostik Sistem**.
+- Anda membuka halaman saat ingin mengamati kondisi saat ini atau membandingkan beberapa snapshot.
+- Anda tidak sedang menjalankan tindakan teknis tanpa kebutuhan observasi yang jelas.
+
+## Buka halaman dan perbarui snapshot
+
+1. Pada navigasi sebelah kiri, buka **Akses & Sistem**.
+2. Pilih **Diagnostik Sistem**.
+3. Periksa waktu pada **Snapshot terakhir** di bagian **Status umum**.
+4. Klik **Refresh** di kanan atas untuk mengambil snapshot baru.
+5. Tunggu pemberitahuan **Data debug sedang diperbarui** selesai bila tampil.
+
+**Refresh** tidak menghapus data yang sedang tampil. Halaman mempertahankan snapshot terakhir hingga data baru selesai dimuat.
+
+<ZoomableImage
+  alt="Halaman Diagnostik Sistem dengan status umum, aksi teknis, metrik ringkas, dan session history"
+  caption="Contoh tampilan Ringkasan Diagnostik Sistem. Gunakan Refresh setidaknya dua kali dalam satu sesi halaman untuk mulai membandingkan tren antar-snapshot."
+  src="/img/akses-sistem-diagnostik-sistem-ringkasan.png"
+/>
+
+## Membaca Status umum
+
+Bagian **Status umum** menampilkan label kondisi, seperti **SEHAT**, **PERLU DIPANTAU**, atau kondisi lain yang perlu diperiksa. Label tersebut diringkas dari indikator yang tersedia pada halaman.
+
+Di bagian ini terdapat tiga kartu yang dapat diklik untuk membuka detail terkait:
+
+- **Query backend**: jumlah temuan yang perlu diperiksa pada panel **Query backend**.
+- **Request frontend**: jumlah request berulang yang terdeteksi dalam sesi browser saat ini.
+- **Aktivitas database**: ketersediaan statistik aktivitas dan jumlah temuan yang perlu diperiksa.
+
+Klik **Lihat status trace** bila tombol itu tersedia untuk langsung membuka panel yang relevan. Bila detail trace belum aktif, halaman akan menampilkan informasi tersebut tanpa berarti sistem gagal.
+
+## Membaca kartu metrik utama
+
+Empat kartu di bawah aksi teknis dapat diklik untuk membuka detailnya:
+
+- **UPTIME**: lama sistem berjalan sejak mulai aktif.
+- **CACHE HIT RATIO**: perbandingan penggunaan data yang tersedia dari cache pada snapshot tersebut.
+- **HEAP ALLOC**: penggunaan memori yang ditampilkan pada snapshot.
+- **GC COUNT**: jumlah proses pembersihan memori yang tercatat.
+
+Badge pada setiap kartu menunjukkan perubahan sejak snapshot sebelumnya bila perbandingan sudah tersedia. Jangan mengambil kesimpulan hanya dari satu nilai; gunakan riwayat snapshot untuk melihat perubahan antar-refresh.
+
+## Gunakan Ringkasan dan Session history
+
+1. Buka tab **Ringkasan**.
+2. Baca **Operational insight** untuk melihat interpretasi singkat dari snapshot saat ini.
+3. Periksa **Session history** di sisi kanan.
+4. Klik **Refresh** sekali lagi untuk membuat snapshot kedua.
+5. Setelah terdapat minimal dua snapshot, periksa grafik tren yang muncul.
+
+**Session history** menyimpan maksimal 8 snapshot dari load atau refresh manual pada halaman tersebut. Riwayat ini hanya berlaku untuk sesi halaman yang sedang dibuka. Dengan satu snapshot, halaman hanya menampilkan ringkasan terakhir dan pesan **Tren belum cukup data**.
+
+## Buka panel detail
+
+Pilih salah satu tab berikut untuk memusatkan pemeriksaan:
+
+| Tab | Yang dapat diperiksa |
+| --- | --- |
+| **Cache** | Hit ratio, jumlah lookup, hit, miss, dan rincian konteks cache yang tersedia. |
+| **Memory** | Ringkasan nilai memori, grafik snapshot, serta jumlah **GC COUNT**. |
+| **Query backend** | Ringkasan temuan query yang perlu diperiksa dan detail yang tersedia. |
+| **Database** | Ringkasan aktivitas, status ketersediaan, waktu mulai perhitungan, serta daftar aktivitas paling sering atau paling lama. |
+| **Request FE** | Request frontend berulang yang terdeteksi pada sesi browser ini. |
+
+Gunakan tombol **Refresh** pada panel yang menyediakannya untuk memperbarui panel tersebut. Pada **Request FE**, gunakan **Clear** hanya untuk menghapus daftar temuan dari sesi browser saat ini agar observasi berikutnya dimulai dari daftar kosong.
+
+### Membaca Aktivitas database
+
+Pada tab **Database**, periksa kartu **Status**, **Cakupan**, **Mulai dihitung**, dan **Izin reset** terlebih dahulu. Daftar detail membantu membedakan aktivitas **Paling sering**, **Total waktu terbesar**, dan **Rata-rata terlama**.
+
+- **Paling sering** menunjukkan aktivitas dengan jumlah panggilan tertinggi.
+- **Total waktu terbesar** menunjukkan aktivitas dengan waktu akumulatif tertinggi sejak statistik terakhir direset.
+- **Rata-rata terlama** menunjukkan aktivitas dengan waktu rata-rata tertinggi.
+
+Gunakan penanda **Perlu dicek** untuk memprioritaskan pemeriksaan lebih lanjut oleh pihak yang bertanggung jawab. Angka statistik bersifat akumulatif sejak reset terakhir, bukan ringkasan per tanggal kalender.
+
+## Gunakan aksi teknis dengan hati-hati
+
+Bagian **Aksi teknis** hanya ditujukan untuk observasi manual oleh Super Admin. Setiap tindakan membuka dialog konfirmasi.
+
+### Reset Metrics
+
+1. Klik **Reset Metrics**.
+2. Baca dampak yang dijelaskan dalam dialog **Reset cache metrics?**.
+3. Klik **Reset Metrics** untuk mengonfirmasi, atau **Batal** untuk membatalkan.
+4. Klik **Refresh** untuk melihat snapshot baru.
+
+Tindakan ini mengosongkan counter metrik cache yang tampil, sehingga perhitungan berikutnya dimulai kembali dari nol.
+
+### Force GC
+
+1. Klik **Force GC**.
+2. Baca keterangan pada dialog **Force garbage collection?**.
+3. Klik **Force GC** untuk mengonfirmasi, atau **Batal** untuk membatalkan.
+4. Klik **Refresh** untuk melihat snapshot setelah tindakan selesai.
+
+Nilai memori tidak dijamin langsung turun pada snapshot berikutnya. Gunakan tindakan ini untuk observasi, bukan sebagai cara rutin menangani masalah memori.
+
+### Reset statistik pada Database
+
+1. Buka tab **Database**.
+2. Pastikan **Izin reset** menunjukkan **Diizinkan** dan tombol **Reset statistik** aktif.
+3. Klik **Reset statistik**.
+4. Baca dialog **Reset statistik database?**.
+5. Klik **Reset statistik** untuk mengonfirmasi.
+
+Setelah direset, statistik aktivitas pada panel **Database** mulai dihitung kembali. Jika tombol tidak aktif, reset tidak tersedia untuk akun yang sedang digunakan.
+
+:::caution
+Jangan menggunakan **Reset Metrics**, **Force GC**, atau **Reset statistik** untuk percobaan biasa. Pastikan kebutuhan observasi sudah jelas dan catat waktu snapshot sebelum melakukan tindakan.
+:::
+
+## Hasil yang diharapkan
+
+Anda dapat memperbarui snapshot, membaca status umum dan kartu metrik, membuka detail sumber yang membutuhkan perhatian, serta membandingkan perubahan dalam **Session history**. Jika tindakan teknis memang diperlukan, halaman menampilkan dialog konfirmasi sebelum tindakan dijalankan.
+
+## Jika data diagnostik tidak tersedia
+
+- Jika muncul **Akses debug ditolak**, gunakan akun **Super Admin** atau hubungi Super Admin untuk mendapatkan akses.
+- Jika muncul **Metrics gagal dimuat**, klik **Muat ulang** atau **Coba lagi** pada pesan yang tampil.
+- Jika **Metrics kosong** muncul, klik **Muat ulang** dan periksa kembali setelah data tersedia.
+- Jika tren belum tampil, lakukan **Refresh** lagi agar terdapat minimal dua snapshot dalam sesi ini.
+- Jika nilai **Process RSS** atau metrik lain menampilkan **Tidak tersedia**, lanjutkan membaca metrik lain yang tersedia; nilai tersebut tidak selalu tersedia pada setiap runtime.
+- Jika tombol **Reset statistik** tidak aktif, periksa **Izin reset** pada tab **Database**. Jangan memaksa tindakan ketika izin tidak tersedia.
+
+## Langkah berikutnya
+
+Gunakan [Hak Akses](./hak-akses) untuk memastikan hanya akun yang tepat yang dapat membuka menu operasional sensitif ini.

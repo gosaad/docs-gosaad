@@ -72,6 +72,9 @@ const sidebars: SidebarsConfig = {
       items: [
         'administrator/akses-sistem/pengguna',
         'administrator/akses-sistem/hak-akses',
+        'administrator/akses-sistem/diagnostik-sistem',
+        'administrator/akses-sistem/manajemen-storage',
+        'administrator/akses-sistem/backup-sistem',
       ],
     },
     {

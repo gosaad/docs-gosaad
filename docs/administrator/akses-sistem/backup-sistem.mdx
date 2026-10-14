@@ -1,0 +1,136 @@
+---
+title: Membuat dan mengelola Backup Sistem
+description: Buat arsip backup, impor archive, periksa riwayat, unduh, restore, dan hapus backup melalui GoSAAD.
+---
+
+import ZoomableImage from '@site/src/components/ZoomableImage';
+
+# Membuat dan mengelola Backup Sistem
+
+Gunakan **Backup Sistem** untuk membuat dan mengelola arsip sistem melalui satu halaman. Anda dapat menentukan scope arsip, mencatat tujuan pembuatan, mengimpor archive yang sudah ada, serta meninjau riwayat dan tindakan yang tersedia untuk setiap backup.
+
+Restore adalah tindakan berdampak besar. Gunakan hanya sesuai prosedur operasional dan setelah membaca seluruh peringatan yang ditampilkan pada dialog.
+
+## Yang perlu disiapkan
+
+- Anda memiliki akses ke menu **Backup**.
+- Anda sudah mengetahui apakah arsip perlu memuat **Database**, **File uploads**, atau keduanya.
+- Untuk import, Anda memiliki file archive ZIP yang sesuai dan, bila tersedia, checksum sumbernya.
+- Untuk restore, pilih backup yang sudah selesai dan pastikan tidak ada pekerjaan penting yang sedang berlangsung.
+
+:::caution
+Jangan menggunakan **Restore backup** atau **Hapus backup** untuk percobaan. Selalu periksa nama, scope, ukuran, status, dan catatan backup sebelum mengonfirmasi tindakan.
+:::
+
+## Buka Backup Sistem
+
+1. Pada navigasi sebelah kiri, buka **Akses & Sistem**.
+2. Pilih **Backup**.
+3. Periksa ringkasan di bagian atas:
+   - **TOTAL**: jumlah backup pada daftar sesuai filter.
+   - **AKTIF**: jumlah proses backup yang masih berjalan.
+   - **SCOPE**: cakupan filter riwayat yang sedang dipilih.
+   - **REFRESH**: apakah pembaruan daftar sedang berjalan atau **Idle**.
+
+<ZoomableImage
+  alt="Halaman Backup Sistem dengan pembuatan backup, import archive, filter, dan riwayat backup"
+  caption="Contoh halaman Backup Sistem. Pembuatan, import, filter, dan riwayat backup tersedia dalam satu alur kerja."
+  src="/img/akses-sistem-backup-sistem.png"
+/>
+
+## Buat backup baru
+
+1. Pada panel **Buat backup**, pilih scope arsip:
+   - Centang **Database** bila arsip perlu menyertakan data pada pilihan tersebut.
+   - Centang **File uploads** bila arsip perlu menyertakan file upload aplikasi.
+2. Isi **Catatan** bila Anda ingin menandai alasan atau konteks backup. Kolom ini opsional dan menerima hingga 500 karakter.
+3. Klik **Buat backup**.
+4. Periksa notifikasi dan status pada **Riwayat backup**.
+
+Tombol **Reset** pada panel **Buat backup** mengembalikan pilihan scope dan **Catatan** ke keadaan awal. Tombol **Buat backup** tidak dapat digunakan apabila kedua pilihan scope tidak dicentang.
+
+## Import archive
+
+Gunakan **Import archive** untuk memasukkan arsip backup dari mesin lain ke katalog backup halaman ini. Import hanya memasukkan arsip ke daftar; tindakan ini tidak menjalankan restore.
+
+1. Klik **Import archive**.
+2. Pada dialog **Import archive backup**, klik **Pilih archive ZIP**.
+3. Pilih file dengan ekstensi `.zip`.
+4. Isi **Checksum sumber** bila nilainya tersedia dari sumber backup. Kolom ini opsional dan harus memakai format `sha256:` diikuti 64 karakter hex kecil.
+5. Klik **Import archive**.
+6. Setelah pesan berhasil tampil, klik **Tutup** dan periksa archive pada **Riwayat backup**.
+
+Jika file yang dipilih tidak berformat ZIP, kosong, atau checksum tidak sesuai, halaman akan menampilkan pesan kesalahan dan archive tidak diimpor.
+
+## Memfilter dan membaca Riwayat backup
+
+Gunakan filter di atas **Riwayat backup** untuk mempersempit daftar:
+
+1. Pilih **Status**, misalnya status aktif, selesai, atau **Dihapus** bila ingin melihat arsip yang telah dihapus.
+2. Pilih **Scope** untuk membatasi jenis arsip yang ditampilkan.
+3. Pilih **Urutan**, misalnya **Terbaru dibuat**.
+4. Klik **Reset** untuk mengembalikan filter ke pilihan awal.
+5. Klik **Refresh** pada panel **Riwayat backup** untuk memperbarui daftar.
+
+Tabel riwayat menampilkan kolom **Backup**, **Status**, **Actor**, **Dibuat**, **Selesai**, **Ukuran**, **Checksum**, dan **Aksi**. Status **Dihapus** tersedia melalui filter dan secara default dapat disembunyikan dari daftar aktif.
+
+## Gunakan aksi pada baris backup
+
+Setiap baris backup dapat memiliki empat tombol di kolom **Aksi**:
+
+| Tombol | Kegunaan |
+| --- | --- |
+| **Detail backup** | Membuka dialog berisi scope, asal archive, actor, waktu, ukuran, checksum, status download, dan catatan bila ada. |
+| **Download backup** | Mengunduh archive bila backup siap diunduh. |
+| **Restore backup** | Membuka preview dan konfirmasi restore untuk backup yang memenuhi syarat. |
+| **Hapus backup** | Menghapus archive backup dari daftar penyimpanan backup setelah konfirmasi. |
+
+Pada **Detail backup**, gunakan **Salin penuh** di bagian **Checksum** bila Anda perlu menyalin nilai checksum lengkap. Klik **Refresh** dalam dialog untuk memperbarui detail yang tampil.
+
+## Hapus archive backup
+
+Penghapusan archive tidak menghapus data aktif aplikasi. Namun archive backup yang dihapus tidak lagi tersedia untuk diunduh atau dipilih sebagai sumber restore.
+
+1. Pastikan status backup tidak sedang berjalan atau menunggu.
+2. Klik **Hapus backup** pada baris yang benar.
+3. Pada dialog **Hapus arsip backup?**, periksa **Backup**, **Scope**, dan **Ukuran**.
+4. Klik **Hapus archive** untuk mengonfirmasi, atau **Batal** untuk membatalkan.
+5. Gunakan filter **Status** dan pilih **Dihapus** bila perlu memeriksa riwayatnya.
+
+## Restore backup dengan aman
+
+Restore hanya tersedia pada backup yang memenuhi kondisi di antarmuka. Proses ini dapat menghentikan sementara akses pengguna dan mengganti data aktif dengan isi backup terpilih.
+
+1. Pada baris backup yang ingin digunakan, klik **Restore backup**.
+2. Baca dialog **Restore backup sistem** secara menyeluruh.
+3. Periksa bagian **Scope penggantian**, **Kompatibilitas**, jumlah dampak pekerjaan aktif, serta daftar **Pemblokir** dan **Peringatan**.
+4. Bila tombol **Mulai restore** tersedia, ketik frasa yang diminta secara persis pada **Konfirmasi penggantian sistem**.
+5. Centang pernyataan bahwa Anda memahami layanan akan berhenti sementara.
+6. Klik **Mulai restore**.
+7. Pada panel **Status restore sistem**, gunakan **Cek status** untuk melihat perkembangan.
+
+Jika preview kedaluwarsa, klik **Preview baru** sebelum melanjutkan. Jangan memulai restore kedua saat panel status menunjukkan proses masih berjalan atau halaman sedang mencoba tersambung kembali.
+
+Setelah status **Restore selesai**, halaman dapat menampilkan **Rollback point tersedia**. Gunakan **Finalisasi restore** hanya setelah hasil restore sudah diperiksa dan Anda tidak lagi memerlukan jalur pemulihan tersebut.
+
+:::warning
+Jika halaman menampilkan **Pemblokir**, **Preview sudah kedaluwarsa**, atau **Restore gagal**, jangan memaksa restore. Baca pesan pada panel status dan hubungi pihak yang bertanggung jawab atas operasional sistem bila diperlukan.
+:::
+
+## Hasil yang diharapkan
+
+Anda dapat membuat arsip dengan scope yang tepat, menambahkan archive ZIP ke katalog melalui import, menemukan backup melalui filter, memeriksa detail dan checksum, serta menggunakan tindakan download, hapus, atau restore hanya pada backup yang sesuai.
+
+## Jika backup tidak dapat dikelola
+
+- Jika muncul **Akses backup ditolak**, akun aktif tidak memiliki permission **Backup Sistem**. Hubungi Super Admin.
+- Jika **Buat backup** tidak aktif, pilih setidaknya satu scope dan periksa apakah ada pekerjaan restore aktif.
+- Jika **Import archive** tidak aktif, tunggu pekerjaan backup atau restore yang aktif selesai, atau pastikan akun memiliki izin import.
+- Jika import gagal, periksa bahwa file berformat `.zip`, tidak kosong, dan nilai **Checksum sumber**—bila diisi—memakai format yang benar.
+- Jika tombol **Download backup** tidak aktif, backup belum siap diunduh atau tindakan sedang dikunci oleh pekerjaan restore aktif.
+- Jika tombol **Restore backup** tidak aktif, pilih backup lain yang sudah selesai atau baca keterangan yang muncul pada tombol tersebut.
+- Jika daftar tidak berubah, klik **Refresh** pada **Riwayat backup**.
+
+## Langkah berikutnya
+
+Gunakan [Manajemen Storage](./manajemen-storage) untuk meninjau file upload tidak terpakai secara manual tanpa mengubah arsip backup yang tersimpan.
