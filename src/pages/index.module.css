@@ -1,0 +1,73 @@
+/**
+ * CSS files with the .module.css suffix will be treated as CSS modules
+ * and scoped locally.
+ */
+
+.heroBanner {
+  background:
+    radial-gradient(circle at 15% 18%, rgba(96, 165, 250, 0.28), transparent 24rem),
+    radial-gradient(circle at 85% 84%, rgba(56, 189, 248, 0.2), transparent 25rem),
+    linear-gradient(135deg, #f7fbff 0%, #eef6ff 48%, #f8fcff 100%);
+  color: #0f172a;
+  padding: 5rem 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.brandIcon {
+  display: block;
+  height: 6rem;
+  margin: 0 auto 1.5rem;
+  width: 6rem;
+}
+
+.heroTitle {
+  color: #020617;
+}
+
+.heroBanner :global(.hero__subtitle) {
+  color: #475569;
+  font-weight: 500;
+}
+
+.heroBanner :global(.button--secondary) {
+  background: #1f7af8;
+  border: 1px solid #1f7af8;
+  color: #fff;
+  box-shadow: 0 12px 30px rgba(31, 122, 248, 0.24);
+}
+
+.heroBanner :global(.button--secondary:hover) {
+  background: #1267e1;
+  border-color: #1267e1;
+  color: #fff;
+}
+
+@media screen and (max-width: 996px) {
+  .heroBanner {
+    padding: 3.5rem 2rem;
+  }
+}
+
+html[data-theme='dark'] .heroBanner {
+  background:
+    radial-gradient(circle at 15% 18%, rgba(31, 122, 248, 0.28), transparent 24rem),
+    radial-gradient(circle at 85% 84%, rgba(14, 116, 144, 0.22), transparent 25rem),
+    linear-gradient(135deg, #0b1220 0%, #101c33 52%, #0b1220 100%);
+  color: #e2e8f0;
+}
+
+html[data-theme='dark'] .heroTitle {
+  color: #f8fafc;
+}
+
+html[data-theme='dark'] .heroBanner :global(.hero__subtitle) {
+  color: #cbd5e1;
+}
+
+.buttons {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}

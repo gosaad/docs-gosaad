@@ -1,0 +1,64 @@
+---
+sidebar_position: 2
+title: Mengelola kompetensi dan item KD
+description: Susun kompetensi, item KD, tipe soal, dan poin penilaian untuk bank soal di GoSAAD.
+---
+
+import ZoomableImage from '@site/src/components/ZoomableImage';
+import Admonition from '@theme/Admonition';
+
+# Mengelola kompetensi dan item KD
+
+<Admonition type="note" title="Fitur lanjutan">
+  Bagian **Kompetensi** dapat dilewati bila Anda belum ingin menggunakan penilaian berdasarkan bab atau kompetensi dasar. Gunakan fitur ini saat Anda ingin menyusun bank soal dan penilaian dengan struktur kompetensi serta item KD.
+</Admonition>
+
+Gunakan **Kompetensi** untuk menentukan tujuan penilaian. Ujian dapat disusun berdasarkan pencapaian suatu bab atau berdasarkan kompetensi dasar (KD).
+
+Setiap kompetensi berisi item KD yang menentukan tipe soal, jumlah soal, part pengerjaan, serta poin untuk jawaban benar dan salah.
+
+<ZoomableImage
+  alt="Tampilan Daftar Kompetensi GoSAAD dengan kompetensi, item KD, tipe soal, total soal, serta poin benar dan salah"
+  src="/img/persiapan-kompetensi.png"
+/>
+
+## Buka Daftar Kompetensi
+
+1. Pada navigasi sebelah kiri, buka **Persiapan**.
+2. Pilih **Kompetensi**.
+
+Halaman **Daftar kompetensi** menampilkan jumlah kompetensi dan item KD. Gunakan kolom **Cari kode atau area kompetensi** atau **Cari kode atau judul item** untuk menemukan data yang diperlukan.
+
+## Tambah kompetensi satu per satu
+
+1. Klik **Tambah kompetensi**.
+2. Isi **Kode kompetensi**. Kode harus unik.
+3. Isi **Area kompetensi** dengan nama bab atau area pembelajaran yang mudah dikenali.
+4. Tentukan **Total part**. Item KD akan memilih part dari jumlah ini.
+5. Klik **Simpan**.
+
+Contohnya, satu kompetensi dapat mewakili satu bab materi atau satu kompetensi dasar yang akan dinilai.
+
+## Tambah item KD dan atur penilaian
+
+1. Pada kompetensi yang dituju, klik **Tambah item**.
+2. Isi **Kode item** dan pilih **Tipe soal**.
+3. Pilih **Part** dan tentukan **Total soal**.
+4. Tentukan **Point item** untuk jawaban benar.
+5. Tentukan **Point salah mutlak** untuk jawaban salah.
+6. Isi **Judul item** dan, bila diperlukan, **Deskripsi item**.
+7. Klik **Simpan**.
+
+Kolom **Point** dan **Point salah mutlak** pada daftar item KD memperlihatkan aturan nilai yang dipakai. Nilai `0` pada **Point item** diperbolehkan untuk item tanpa bobot.
+
+## Tambah kompetensi secara bulk
+
+Klik **Upload Excel** untuk menambahkan kompetensi dan item KD secara banyak sekaligus melalui file Excel.
+
+## Hasil yang diharapkan
+
+Kompetensi tampil dengan kode, jumlah part, dan area kompetensi. Item KD di bawahnya menampilkan tipe soal, total soal, poin jawaban benar, poin salah mutlak, serta judul item.
+
+## Langkah berikutnya
+
+Lanjutkan dengan menyiapkan bank soal berdasarkan kompetensi dan item KD yang telah dibuat.

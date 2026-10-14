@@ -1,0 +1,70 @@
+---
+sidebar_position: 3
+title: Mengelola group dan sub-group
+description: Susun group utama, sub-group, dan anggota untuk mengatur kelas yang mengikuti asesmen di GoSAAD.
+---
+
+import ZoomableImage from '@site/src/components/ZoomableImage';
+
+# Mengelola group dan sub-group
+
+Gunakan halaman **Daftar Group** untuk menyusun kelas serta pecahan kelas yang akan digunakan saat mengatur peserta asesmen.
+
+## Memahami struktur group
+
+**Group utama** adalah kelompok besarnya. Contohnya, buat group **XII** untuk seluruh kelas tingkat XII.
+
+**Sub-group** adalah pecahan di dalam group utama. Pada group **XII**, Anda dapat membuat sub-group seperti **XII IPS 1**, **XII IPA 1**, atau **XII Akuntansi 1**.
+
+Setelah peserta dimasukkan ke sub-group, susunan ini digunakan untuk menentukan kelas dan sub-kelas yang berhak mengikuti asesmen.
+
+## Buka Daftar Group
+
+1. Pada navigasi sebelah kiri, buka **Data master**.
+2. Pilih **Group**.
+
+Halaman **Daftar Group** menampilkan struktur parent-subgroup. Bagian **Ringkasan** menunjukkan jumlah group utama, sub-group, dan total group. Bagian **Indeks group** memudahkan Anda melihat daftar sub-group yang tersedia.
+
+<ZoomableImage
+  alt="Tampilan Daftar Group GoSAAD yang menunjukkan group utama, sub-group, Ringkasan, dan Indeks group"
+  src="/img/data-master-group.png"
+/>
+
+## Tambah group utama
+
+1. Klik **Tambah grup**.
+2. Isi **Nama group baru**.
+3. Pilih **Tipe group**: **Kelas**, **Angkatan**, **Program**, atau **Lainnya**.
+4. Klik **Simpan group utama**.
+
+Pilih tipe yang sesuai dengan cara sekolah mengelompokkan peserta. Untuk struktur kelas seperti XII IPA 1, gunakan tipe **Kelas**.
+
+## Tambah sub-group
+
+1. Temukan group utama yang akan dipecah, misalnya **XII**.
+2. Pada baris **Tambah sub-group**, isi nama sub-group, misalnya **XII IPA 1**.
+3. Klik tombol **Simpan sub-group**.
+
+Sub-group baru akan tampil di bawah group utama tersebut dan juga pada **Indeks group**.
+
+## Atur anggota sub-group
+
+1. Pada sub-group yang ingin diatur, klik tombol **Anggota**.
+2. Di halaman **Daftar anggota group**, klik **Tambah** untuk mencari dan menambahkan peserta satu per satu.
+3. Gunakan **Upload Data** jika Anda perlu menambahkan anggota group melalui data upload.
+
+Peserta yang sudah menjadi anggota sub-group dapat dikelompokkan sesuai kelas atau sub-kelasnya sebelum asesmen diatur.
+
+## Cari dan periksa struktur
+
+- Gunakan kolom **Cari group dan subgroup** untuk menemukan struktur tertentu.
+- Gunakan **Refresh** untuk memuat ulang daftar.
+- Buka **Anggota** dari **Indeks group** untuk melihat atau mengatur peserta dari sub-group yang dipilih.
+
+:::caution
+Tombol **Hapus group** dan **Hapus subgroup** menghapus struktur yang dipilih. Periksa group atau sub-group yang dituju sebelum menggunakan tindakan tersebut.
+:::
+
+## Langkah berikutnya
+
+Lanjutkan dengan [menambahkan peserta](/docs/administrator/data-master/tambah-peserta) atau [mengunggah data peserta](/docs/administrator/data-master/upload-data-peserta) sebelum mengatur peserta ke dalam sub-group.

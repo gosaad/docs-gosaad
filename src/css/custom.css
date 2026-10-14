@@ -1,0 +1,81 @@
+/**
+ * Any CSS included here will be global. The classic template
+ * bundles Infima by default. Infima is a CSS framework designed to
+ * work well for content-centric websites.
+ */
+
+:root {
+  --ifm-font-family-base: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ifm-heading-font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  --ifm-font-size-base: 16px;
+  --ifm-line-height-base: 1.7;
+  --ifm-heading-line-height: 1.2;
+  --ifm-color-primary: #1f7af8;
+  --ifm-color-primary-dark: #126fe8;
+  --ifm-color-primary-darker: #0f68db;
+  --ifm-color-primary-darkest: #0d56b5;
+  --ifm-color-primary-light: #3c8df9;
+  --ifm-color-primary-lighter: #539bfa;
+  --ifm-color-primary-lightest: #84b9fc;
+  --ifm-background-color: #f7fbff;
+  --ifm-navbar-background-color: rgba(255, 255, 255, 0.92);
+  --ifm-navbar-shadow: 0 1px 0 rgba(191, 219, 254, 0.9);
+  --ifm-code-font-size: 95%;
+  --docusaurus-highlighted-code-line-bg: rgba(31, 122, 248, 0.1);
+}
+
+[data-theme='dark'] {
+  --ifm-color-primary: #60a5fa;
+  --ifm-color-primary-dark: #3b92f8;
+  --ifm-color-primary-darker: #2587f7;
+  --ifm-color-primary-darkest: #0967da;
+  --ifm-color-primary-light: #85bbfb;
+  --ifm-color-primary-lighter: #9bc8fc;
+  --ifm-color-primary-lightest: #c7e1fe;
+  --ifm-background-color: #0b1220;
+  --ifm-navbar-background-color: rgba(11, 18, 32, 0.92);
+  --ifm-navbar-shadow: 0 1px 0 rgba(30, 64, 175, 0.45);
+  --docusaurus-highlighted-code-line-bg: rgba(96, 165, 250, 0.16);
+}
+
+.navbar {
+  backdrop-filter: blur(12px);
+}
+
+.markdown h1,
+.markdown h2,
+.markdown h3,
+.hero__title {
+  font-weight: 700;
+  letter-spacing: -0.025em;
+}
+
+.markdown h2 {
+  margin-top: 3rem;
+}
+
+.footer {
+  padding: 1rem 0;
+}
+
+.footer__links {
+  margin-bottom: 0.5rem;
+}
+
+.footer__col {
+  margin-bottom: 0;
+}
+
+.footer__title,
+.footer__item {
+  font-size: 0.875rem;
+  margin-bottom: 0.25rem;
+}
+
+.footer__bottom {
+  margin-top: 0.5rem;
+}
+
+.footer__copyright {
+  font-size: 0.8125rem;
+}
