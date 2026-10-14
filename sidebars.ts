@@ -82,6 +82,11 @@ const sidebars: SidebarsConfig = {
       label: 'Peserta',
       items: ['peserta/login'],
     },
+    {
+      type: 'category',
+      label: 'Bantuan & kendala',
+      items: ['bantuan-kendala'],
+    },
   ],
 };
 

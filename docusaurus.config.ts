@@ -48,6 +48,22 @@ const config: Config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@easyops-cn/docusaurus-search-local',
+      {
+        indexDocs: true,
+        indexBlog: false,
+        indexPages: true,
+        hashed: 'filename',
+        highlightSearchTermsOnTargetPage: true,
+        searchBarPosition: 'right',
+        searchResultLimits: 8,
+        searchResultContextMaxLength: 72,
+      },
+    ],
+  ],
+
   themeConfig: {
     colorMode: {
       respectPrefersColorScheme: true,
