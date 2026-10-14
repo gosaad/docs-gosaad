@@ -42,7 +42,10 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Pelaksanaan',
-      items: ['administrator/pelaksanaan/tambah-jadwal'],
+      items: [
+        'administrator/pelaksanaan/tambah-jadwal',
+        'administrator/pelaksanaan/token-ujian',
+      ],
     },
     {
       type: 'category',
