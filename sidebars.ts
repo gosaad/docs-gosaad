@@ -36,6 +36,15 @@ const sidebars: SidebarsConfig = {
         'administrator/persiapan/event',
         'administrator/persiapan/kompetensi',
         'administrator/persiapan/bank-soal',
+        'administrator/persiapan/kapita-selekta',
+      ],
+    },
+    {
+      type: 'category',
+      label: 'Pelaksanaan',
+      items: [
+        'administrator/pelaksanaan/tambah-jadwal',
+        'administrator/pelaksanaan/token-ujian',
       ],
     },
     {

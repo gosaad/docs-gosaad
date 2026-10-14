@@ -1,0 +1,62 @@
+---
+sidebar_position: 2
+title: Kelola token ujian
+description: Generate dan salin token untuk jadwal Official yang menggunakan Token ujian di GoSAAD.
+---
+
+import ZoomableImage from '@site/src/components/ZoomableImage';
+
+# Kelola token ujian
+
+Gunakan **Token** untuk membuat dan membagikan token kepada peserta pada jadwal **Official** yang pengaturan **Token ujian**-nya aktif. Peserta harus memasukkan token terbaru dari pengawas sebelum dapat memulai ujian.
+
+## Yang perlu disiapkan
+
+- Anda memiliki akses ke menu **Token**.
+- Jadwal yang akan digunakan berstatus **Official** dan pengaturan **Token ujian** sudah diaktifkan saat membuat jadwal.
+- Anda mengetahui jadwal, event, atau tanggal ujian yang akan dikelola.
+
+## Buka daftar token
+
+1. Pada navigasi sebelah kiri, buka **Pelaksanaan**.
+2. Pilih **Token**.
+3. Gunakan filter **Status**, **Event**, **Tanggal**, atau **Dibuat oleh saya** bila perlu menemukan jadwal tertentu.
+
+<ZoomableImage
+  alt="Halaman Token ujian dengan daftar jadwal Official, tombol Generate token, dan tombol Salin token"
+  caption="Halaman Token hanya menampilkan jadwal Official dengan Token ujian aktif."
+  src="/img/pelaksanaan-token-ujian.png"
+/>
+
+## Generate dan salin token
+
+1. Temukan jadwal yang akan dibuka untuk peserta.
+2. Klik **Generate token** pada kolom **Aksi**.
+3. Periksa nama jadwal, tanggal, jam, dan sesi pada dialog, lalu klik **Generate token**.
+4. Setelah status **Token berhasil dibuat** tampil, klik **Salin token**.
+5. Bagikan token yang disalin kepada peserta melalui pengawas saat ujian dilaksanakan.
+
+:::caution
+
+Membuat token baru mengganti token aktif pada jadwal tersebut. Pastikan peserta menggunakan token terbaru.
+
+:::
+
+## Perhatikan masa berlaku dan sesi tampilan
+
+Setelah token dibuat, layar menampilkan waktu **Berlaku sampai**. Salin token sebelum Anda merefresh atau berpindah halaman. Token penuh hanya ditampilkan pada sesi antarmuka saat token dibuat; setelah sesi berganti, token tidak dapat dibaca ulang dari halaman ini tanpa membuat token baru.
+
+## Hasil yang diharapkan
+
+Pada baris jadwal, kolom **Token** menampilkan label **Dibuat sesi ini** dan **Siap dibagikan**, nilai token, waktu berlakunya, serta tombol **Salin token**. Peserta dapat memakai token terbaru tersebut untuk memverifikasi jadwal ujian.
+
+## Jika token belum dapat digunakan
+
+- Jika jadwal tidak muncul, pastikan jadwal adalah **Official** dan **Token ujian** sudah aktif. Periksa kembali filter **Status**, **Event**, dan **Tanggal**, lalu klik **Refresh** atau **Reset** bila diperlukan.
+- Jika muncul **Token belum terbaca**, token belum dibuat pada sesi antarmuka ini. Klik **Generate token** untuk membuat token yang baru dan salin segera.
+- Jika peserta menerima pesan token tidak sesuai atau token sudah kedaluwarsa, buat token baru lalu bagikan token terbaru kepada peserta.
+- Jika tombol atau daftar token tidak dapat dibuka dan muncul **Akses token ditolak**, gunakan akun yang memiliki izin membuka **Token**.
+
+## Langkah berikutnya
+
+Setelah token dibagikan, pantau pelaksanaan peserta dari menu **Monitor peserta**.

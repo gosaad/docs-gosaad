@@ -1,0 +1,67 @@
+---
+sidebar_position: 4
+title: Menyusun Kapita Selekta
+description: Gabungkan bank soal dengan mata pelajaran yang sama menjadi satu paket ujian di GoSAAD.
+---
+
+import ZoomableImage from '@site/src/components/ZoomableImage';
+
+# Menyusun Kapita Selekta
+
+Gunakan **Kapita Selekta** untuk menyusun beberapa bank soal menjadi satu paket ujian. Anda memilih bank sumber dan menetapkan kuota soal untuk setiap tipe soal. Paket yang berstatus **Siap** kemudian dapat digunakan sebagai sumber soal saat menyiapkan ujian.
+
+<ZoomableImage
+  alt="Tampilan Daftar Kapita Selekta dengan filter, tombol Tambah paket, status, dan kesiapan paket"
+  src="/img/persiapan-kapita-selekta.png"
+/>
+
+## Yang perlu disiapkan
+
+- Anda memiliki akses ke menu **Kapita Selekta**.
+- Bank soal yang akan digabungkan memakai **Mata pelajaran** yang sama.
+- Bank soal memiliki stok soal yang cukup untuk memenuhi kuota paket.
+
+## Memahami kepemilikan paket dan bank soal
+
+Ada dua cara umum menggunakan Kapita Selekta.
+
+### Menggabungkan bank soal milik satu guru
+
+Seorang guru dapat menggabungkan beberapa bank soalnya sendiri, misalnya bank **Matematika Bab 1**, **Matematika Bab 2**, dan **Matematika Bab 3**, menjadi satu paket untuk evaluasi tengah semester. Bank soal dan soal sumber tetap milik guru tersebut; Kapita Selekta hanya menyusun sumber-sumber itu dalam satu paket.
+
+### Menggabungkan bank soal milik beberapa guru
+
+Administrator atau superadmin dapat menggabungkan bank soal milik beberapa guru, misalnya bank Matematika Kelas 5 milik Guru A dan Guru B, selama semuanya memakai mata pelajaran yang sama. Kuota paket menentukan jumlah soal tiap tipe yang akan ditampilkan dari gabungan bank tersebut.
+
+:::note
+
+Pada penggabungan lintas guru, **Kapita Selekta** tercatat milik akun administrator atau superadmin yang membuatnya. Bank soal dan soal sumber tidak berpindah kepemilikan; bank tersebut tetap milik guru asalnya.
+
+:::
+
+## Buat paket Kapita Selekta
+
+1. Pada navigasi sebelah kiri, buka **Persiapan**.
+2. Pilih **Kapita Selekta**.
+3. Klik **Tambah paket**.
+4. Isi **Kode**, **Nama**, dan bila diperlukan **Deskripsi** paket.
+5. Pilih **Mata pelajaran**.
+6. Pada **Bank soal**, cari lalu tambahkan semua bank yang akan digunakan. Bank yang dipilih akan tampil dalam urutan paket dan dapat dihapus dari paket bila diperlukan.
+7. Isi kuota untuk tipe soal yang akan digunakan. Periksa jumlah **Stok** yang ditampilkan agar memenuhi kuota yang Anda tetapkan.
+8. Isi nilai poin untuk setiap tipe soal yang memiliki kuota.
+9. Klik **Simpan draft** bila paket belum selesai, atau **Tandai siap** bila pemeriksaan kesiapan menunjukkan paket memenuhi syarat.
+
+## Hasil yang diharapkan
+
+Paket muncul pada **Daftar Kapita Selekta** dengan jumlah bank, jumlah soal, status, dan kesiapan paket. Paket berstatus **Siap** dan **Dapat digunakan** dapat dipilih sebagai sumber soal saat membuat jadwal ujian.
+
+## Jika paket belum siap
+
+- Pastikan semua bank memakai **Mata pelajaran** yang dipilih pada paket.
+- Tambahkan atau ganti bank soal bila stok gabungan tidak mencukupi kuota suatu tipe soal.
+- Isi nilai poin untuk setiap tipe soal yang kuotanya lebih dari nol.
+- Bila Anda mengganti **Mata pelajaran**, tambahkan kembali bank soal yang sesuai karena pilihan bank sebelumnya akan dihapus.
+
+## Langkah berikutnya
+
+Lanjutkan dengan membuat jadwal ujian dan pilih Kapita Selekta yang sudah berstatus **Siap** sebagai sumber soal.

@@ -1,0 +1,141 @@
+---
+sidebar_position: 1
+title: Tambah jadwal ujian
+description: Buat jadwal ujian Official dengan peserta dari group atau subgroup dan sumber bank soal di GoSAAD.
+---
+
+import ZoomableImage from '@site/src/components/ZoomableImage';
+
+# Tambah jadwal ujian
+
+Gunakan **Jadwal** untuk membuat jadwal ujian **Official**. Pada alur ini, Anda menentukan nama dan waktu ujian, peserta dari group atau subgroup, sumber bank soal, kuota soal, serta pengaturan pengerjaan peserta.
+
+:::note
+
+Mode **Official** dipilih secara default. **Quick mode** adalah fitur lanjutan dan dibahas dalam panduan terpisah.
+
+:::
+
+## Yang perlu disiapkan
+
+- Anda memiliki akses untuk membuka menu **Jadwal** dan menambahkan jadwal.
+- Group atau subgroup peserta sudah dibuat dan anggotanya sudah diatur.
+- Bank soal yang akan dipakai sudah tersedia.
+- Bila memakai event, event penilaian sudah dibuat.
+
+## Buka form tambah jadwal
+
+1. Pada navigasi sebelah kiri, buka **Pelaksanaan**.
+2. Pilih **Jadwal**.
+3. Klik **Tambah jadwal**.
+
+<ZoomableImage
+  alt="Halaman Jadwal dengan tombol Tambah jadwal di kanan atas"
+  caption="Halaman Jadwal menampilkan daftar jadwal yang sudah dibuat dan tombol Tambah jadwal."
+  src="/img/pelaksanaan-jadwal-daftar-susulan.png"
+/>
+
+## Isi identitas dan waktu ujian
+
+1. Pada bagian **Identitas**, isi **Nama jadwal**.
+2. Pilih **Event** bila jadwal perlu dikelompokkan ke dalam event tertentu. Pilih **Tanpa event** bila tidak digunakan.
+3. Pastikan **Mode ujian** adalah **Official**.
+4. Pada bagian **Waktu**, isi **Tanggal ujian**, **Jam mulai**, dan **Durasi** dalam menit.
+5. Isi **Minimum pengerjaan (menit)** bila peserta tidak boleh menyelesaikan ujian sebelum waktu minimum tercapai. Nilainya tidak boleh melebihi **Durasi**.
+
+## Tentukan peserta dari group atau subgroup
+
+1. Pada bagian **Target peserta**, klik **Grup peserta**.
+2. Cari lalu pilih group utama atau subgroup yang akan mengikuti ujian.
+3. Periksa pilihan Anda. Penanda biru menunjukkan group utama, sedangkan penanda ungu menunjukkan subgroup di dalam group utama.
+
+Semua anggota dari group atau subgroup yang dipilih dapat mengikuti jadwal ini. Pilih group utama bila seluruh anggotanya menjadi target; pilih subgroup bila ujian hanya untuk bagian tertentu dari group tersebut.
+
+## Pilih sumber soal
+
+Pilih salah satu opsi pada **Jenis sumber**: **Bank soal** atau **Kapita Selekta**.
+
+### Gunakan Bank soal
+
+1. Pilih **Bank soal** pada **Jenis sumber**.
+2. Pada bagian **Bank soal**, cari lalu pilih bank soal yang akan digunakan sebagai sumber pertanyaan.
+3. Pada **Quota soal**, tentukan jumlah soal untuk setiap tipe yang akan diterima peserta.
+4. Periksa ketersediaan stok yang ditampilkan sebelum melanjutkan.
+
+Kuota menentukan jumlah soal per tipe, bukan sekadar jumlah seluruh soal. Pastikan setiap tipe yang memiliki kuota mempunyai stok yang cukup pada bank soal yang dipilih.
+
+### Gunakan Kapita Selekta
+
+1. Pilih **Kapita Selekta** pada **Jenis sumber**.
+2. Pada pilihan **Kapita Selekta**, cari kode atau nama paket.
+3. Pilih paket yang berstatus siap digunakan.
+
+Saat memakai Kapita Selekta, bank soal dan kuota yang sudah disusun pada paket digunakan sebagai sumber jadwal. Lihat [Menyusun Kapita Selekta](../persiapan/kapita-selekta) untuk menyiapkan paketnya.
+
+## Atur pengerjaan peserta
+
+Di bagian **Setting pengerjaan**, pilih pengaturan yang sesuai.
+
+- **Acak soal**: urutan soal peserta diacak.
+- **Acak opsi**: urutan opsi jawaban diacak.
+- **Token ujian**: peserta perlu memasukkan token ujian sebelum mulai mengerjakan.
+- **Tampilkan hasil**: menentukan apakah hasil peserta dibuka atau tetap tertutup.
+
+Aktifkan **Acak soal** dan/atau **Acak opsi** bila Anda ingin variasi urutan tampilan untuk peserta. Biarkan keduanya tidak aktif bila urutan soal dan opsi harus sama seperti di bank soal.
+
+## Simpan jadwal
+
+1. Periksa kembali identitas, waktu, target peserta, sumber soal, dan pengaturan pengerjaan.
+2. Klik **Tambah jadwal**.
+
+Jadwal baru tersimpan sebagai **Draft**. Setelah seluruh konfigurasi diperiksa, gunakan tindakan **Aktifkan** pada jadwal untuk membuka jadwal bagi peserta.
+
+## Hasil yang diharapkan
+
+Jadwal muncul dalam daftar dengan label **Official**, sumber soal yang dipilih, cakupan peserta, serta pengaturan yang dipilih. Sebelum diaktifkan, statusnya adalah **Draft**.
+
+## Jika jadwal tidak dapat disimpan
+
+- Isi **Nama jadwal**, tanggal, jam mulai, dan durasi.
+- Pilih minimal satu group atau subgroup pada **Grup peserta**.
+- Jika menggunakan **Bank soal**, pilih minimal satu bank dan isi minimal satu kuota soal dengan stok yang mencukupi.
+- Jika menggunakan **Kapita Selekta**, pilih paket yang berstatus siap digunakan.
+- Pastikan **Minimum pengerjaan (menit)** tidak lebih besar dari **Durasi**.
+
+## Buat jadwal susulan
+
+Susulan hanya tersedia untuk jadwal **Official** berbasis group yang sudah selesai dan terhubung ke **Event**. Dengan kata lain, jadwal asal wajib memiliki Event dan sudah berjalan sebelum susulan dapat dibuat.
+
+Label seperti **4 belum mengerjakan** pada baris jadwal menunjukkan jumlah peserta yang belum pernah mengerjakan dan dapat dipertimbangkan untuk susulan. Gunakan detail jadwal untuk memastikan jumlah peserta yang benar-benar memenuhi syarat.
+
+1. Pada daftar **Jadwal**, buka detail jadwal yang memiliki peserta belum mengerjakan.
+2. Pada bagian **Susulan**, periksa jumlah peserta yang tersedia untuk susulan.
+3. Klik **Buat susulan**.
+4. Isi **Mulai susulan** dengan tanggal dan jam baru. Waktu mulai harus berada di masa depan.
+5. Atur **Durasi susulan (menit)**. Durasi awal mengikuti jadwal asal, lalu dapat ditambah atau dikurangi dalam satuan menit sesuai kebutuhan.
+6. Jika durasi diubah, isi **Alasan perubahan durasi**.
+7. Klik **Buat susulan** untuk menyimpan jendela susulan.
+
+Peserta dan sumber soal susulan mengikuti jadwal asal. Perubahan durasi hanya berlaku untuk susulan yang dibuat dan tidak mengubah durasi jadwal asal.
+
+<ZoomableImage
+  alt="Detail jadwal dengan bagian Susulan yang menampilkan syarat jadwal Official berbasis group dan terhubung ke Event"
+  caption="Bagian Susulan pada detail jadwal menampilkan kelayakan susulan serta tombol Buat susulan."
+  src="/img/pelaksanaan-jadwal-detail-susulan.png"
+/>
+
+### Hasil susulan
+
+Jendela baru tampil di bagian **Susulan** dengan urutan susulan, waktu mulai, durasi, dan jumlah peserta. Peserta yang tercakup dapat mengikuti ujian pada waktu susulan tersebut.
+
+### Jika susulan tidak dapat dibuat
+
+- Pastikan jadwal asal adalah jadwal **Official** berbasis group, sudah selesai, dan terhubung ke **Event**.
+- Periksa jumlah peserta pada bagian **Susulan**. Hanya peserta yang belum pernah mengerjakan yang dapat dijadwalkan susulan.
+- Pilih **Mulai susulan** pada waktu yang akan datang.
+- Pastikan **Durasi susulan (menit)** lebih dari nol dan tidak kurang dari batas minimum pengerjaan pada jadwal asal.
+- Saat durasi berbeda dari jadwal asal, isi **Alasan perubahan durasi** sebelum menyimpan.
+
+## Langkah berikutnya
+
+Periksa jadwal berstatus **Draft**, lalu gunakan **Aktifkan** ketika jadwal sudah siap dibuka untuk peserta. Setelah ujian berlangsung, buka detail jadwal untuk memantau peserta yang belum mengerjakan dan membuat susulan bila diperlukan.
