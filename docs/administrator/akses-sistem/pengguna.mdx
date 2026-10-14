@@ -1,0 +1,95 @@
+---
+title: Mengelola pengguna
+description: Tambah, ubah, cari, upload, dan hapus akun pengguna administrator di GoSAAD.
+---
+
+# Mengelola pengguna
+
+Gunakan halaman **Pengguna** untuk mengelola akun yang dipakai oleh admin dan pengajar CBT. Dari halaman ini, Anda dapat mencari akun, menambah atau mengubah satu akun, mengupload banyak akun Operator dari Excel, serta menghapus akun dengan konfirmasi.
+
+## Yang perlu disiapkan
+
+- Anda memiliki akses ke menu **Pengguna**.
+- Siapkan nama, email, password, dan posisi untuk akun yang akan dibuat.
+- Untuk upload massal, siapkan file Excel `.xlsx` sesuai template.
+
+## Buka dan cari pengguna
+
+1. Pada navigasi sebelah kiri, buka **Akses & Sistem**.
+2. Pilih **Pengguna**.
+3. Gunakan kotak **Cari nama, email, atau posisi** untuk mencari akun.
+4. Gunakan tombol **Refresh** untuk memuat ulang daftar.
+
+Tabel menampilkan nomor, **NAME**, **EMAIL**, **POSISI**, dan **AKSI**. Badge jumlah di samping judul menunjukkan total pengguna atau jumlah hasil pencarian. Gunakan **Sebelumnya**, nomor halaman, dan **Berikutnya** untuk membuka daftar lain bila diperlukan.
+
+## Tambah pengguna
+
+1. Klik **Tambah pengguna**.
+2. Isi **Nama** dan **Email**.
+3. Isi **Password** dengan minimal 6 karakter.
+4. Pada **Posisi**, pilih posisi pengguna yang tersedia.
+5. Klik **Tambah**.
+
+Form memeriksa bahwa nama, email, password, dan posisi telah diisi. Email harus menggunakan format email yang valid.
+
+## Edit pengguna
+
+1. Pada baris pengguna yang akan diubah, klik **Edit**.
+2. Ubah **Nama**, **Email**, atau **Posisi** sesuai kebutuhan.
+3. Jika kolom **Password baru** tersedia dan password perlu diganti, masukkan password baru. Kosongkan bila tidak ingin mengubahnya.
+4. Klik **Simpan**.
+
+Kolom pengubahan password ditampilkan sesuai akses akun aktif. Gunakan tombol tampilkan/sembunyikan password bila perlu memeriksa isian sebelum menyimpan.
+
+## Upload data pengguna
+
+Gunakan upload untuk membuat banyak akun dengan posisi **Operator**.
+
+1. Klik **Upload data**.
+2. Klik **Unduh template** untuk mengunduh `template-user-import.xlsx`.
+3. Isi template menggunakan kolom **Nama**, **Email**, dan **Password**.
+4. Kembali ke dialog upload, lalu pilih atau seret file Excel ke area upload.
+5. Pastikan file berformat `.xlsx` dan ukurannya tidak lebih dari 5 MB.
+6. Periksa nama file yang tampil sebagai **File Excel siap diupload**.
+7. Klik **Upload data** untuk memproses file.
+
+Password dalam template dipakai ketika akun dibuat dan tidak ditampilkan kembali setelah upload. Setelah proses selesai, periksa pesan hasil upload untuk mengetahui jumlah pengguna yang berhasil diimport atau baris yang perlu diperbaiki.
+
+:::tip
+Gunakan template resmi setiap kali melakukan upload. Template membantu memastikan urutan kolom dan format data sesuai dengan yang dibutuhkan aplikasi.
+:::
+
+## Hapus satu pengguna
+
+1. Pada baris pengguna, klik **Hapus**.
+2. Periksa nama dan email pengguna pada dialog **Hapus pengguna?**.
+3. Klik **Hapus pengguna** untuk mengonfirmasi, atau **Batal** untuk membatalkan.
+
+## Hapus beberapa pengguna
+
+1. Centang kotak pilihan pada setiap pengguna yang akan dihapus; gunakan kotak pada kepala tabel untuk memilih semua pengguna yang terlihat.
+2. Periksa jumlah pada panel **pengguna dipilih**.
+3. Klik **Hapus pengguna terpilih**.
+4. Periksa jumlah pengguna pada dialog konfirmasi.
+5. Klik **Hapus data terpilih** untuk melanjutkan, atau **Batal** untuk membatalkan.
+
+:::caution
+Penghapusan akun bersifat permanen. Pastikan nama dan jumlah pengguna yang dipilih sudah benar sebelum mengonfirmasi.
+:::
+
+## Hasil yang diharapkan
+
+Daftar pengguna menampilkan akun sesuai pencarian yang aktif. Akun baru atau hasil upload muncul pada daftar setelah proses berhasil. Perubahan pada akun tercermin pada kolom **NAME**, **EMAIL**, atau **POSISI** setelah disimpan.
+
+## Jika pengguna tidak dapat dikelola
+
+- Jika daftar tidak dapat dibuka dan muncul **Akses ditolak**, gunakan akun yang memiliki izin membuka menu **Pengguna**.
+- Jika hasil pencarian tidak ditemukan, bersihkan kotak pencarian lalu coba kata kunci lain.
+- Jika tombol simpan tidak aktif, lengkapi isian wajib dan periksa format email serta panjang password.
+- Jika upload ditolak, gunakan file `.xlsx` dengan ukuran maksimal 5 MB dan mulai kembali dari **Unduh template**.
+- Jika upload menampilkan kesalahan per baris, perbaiki data pada baris dan kolom yang disebutkan, lalu upload ulang file.
+- Jika penghapusan dibatalkan atau gagal, muat ulang daftar dan periksa kembali pengguna yang dipilih sebelum mencoba lagi.
+
+## Langkah berikutnya
+
+Lanjutkan ke **Hak Akses** untuk mengelola izin pengguna bila menu tersebut tersedia pada akun Anda.

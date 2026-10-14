@@ -1,0 +1,143 @@
+---
+title: Mengelola hak akses
+description: Audit role, atur menu untuk role custom, kelola Menu Permission, dan periksa dampak akses di GoSAAD.
+---
+
+import ZoomableImage from '@site/src/components/ZoomableImage';
+
+# Mengelola hak akses
+
+Gunakan **Hak Akses** untuk mengaudit role dan menu yang dapat dipakai setiap role pada area administrator. Halaman **Access Control Center** juga menyediakan pembuatan role custom, penyalinan role, pengaturan menu, daftar **Menu Permission**, dan pratinjau dampak akses terhadap navigasi serta aksi.
+
+## Yang perlu disiapkan
+
+- Anda masuk menggunakan akun **Super Admin** yang memiliki akses ke **Hak Akses**.
+- Anda sudah menentukan kebutuhan akses role sebelum mengubah konfigurasi.
+- Untuk membuat role custom, siapkan **Code**, **Nama**, dan deskripsi singkat.
+
+:::caution
+Perubahan akses dapat mengubah menu dan tindakan yang tersedia untuk pengguna dengan role tersebut. Selalu gunakan **Guard Preview** dan uji dengan akun yang sesuai setelah menyimpan perubahan.
+:::
+
+## Memahami halaman Hak Akses
+
+1. Pada navigasi sebelah kiri, buka **Akses & Sistem**.
+2. Pilih **Hak Akses**.
+3. Perhatikan ringkasan **ROLE**, **MENU**, dan **ENDPOINT** di bagian atas.
+4. Gunakan salah satu tab: **Role Overview**, **Access Matrix**, **Menu Permission**, atau **Guard Preview**.
+
+Pada **Role Overview**, kartu role memperlihatkan nama, code, deskripsi singkat, serta jumlah **MENU** dan **POLICY**. Klik kartu role untuk menjadikannya **Role Terpilih**. Panel di sisi kanan menunjukkan domain akses, menu aktif, endpoint, dan daftar menu yang tersedia bagi role tersebut.
+
+<ZoomableImage
+  alt="Halaman Hak Akses dengan kartu role, Role Overview, dan ringkasan role terpilih"
+  caption="Contoh Role Overview: role bawaan ditandai System locked, sedangkan role custom dapat dikelola. Panel Role Terpilih membantu memeriksa cakupan role yang sedang dipilih."
+  src="/img/akses-sistem-hak-akses-role-overview.png"
+/>
+
+### Status role
+
+- **System locked**: role bawaan, seperti **Admin**, **Guru / Pengampu**, dan **Super Admin**. Role ini dapat diaudit, tetapi menu di dalamnya tidak dapat diubah dari halaman ini.
+- **Custom** atau **Custom editable**: role buatan yang dapat diatur dan dihapus.
+- **Locked** pada panel **Role Terpilih** berarti role yang dipilih hanya dapat diperiksa, bukan diedit.
+
+Di halaman ini, code role `operator` ditampilkan sebagai **Guru / Pengampu**.
+
+## Membuat role custom
+
+1. Klik **Role Baru**.
+2. Isi **Code** dengan identitas singkat role, misalnya `guru_tamu`.
+3. Isi **Nama**, misalnya `Guru Tamu`.
+4. Isi **Deskripsi** untuk menjelaskan tujuan role tersebut.
+5. Klik **Buat role**.
+6. Setelah role dibuat, buka **Access Matrix** untuk menentukan menu yang boleh diakses.
+
+Role baru dibuat tanpa akses menu. Karena itu, langkah pengaturan pada **Access Matrix** perlu dilakukan sebelum role digunakan oleh pengguna.
+
+## Menyalin role sebagai titik awal
+
+Gunakan **Copy Role** bila role baru memiliki akses yang mirip dengan role lain.
+
+1. Klik **Copy Role**.
+2. Pada **Role sumber**, pilih role yang akan dijadikan acuan.
+3. Isi **Code**, **Nama**, dan bila perlu ubah **Deskripsi**.
+4. Klik **Copy role**.
+5. Buka **Access Matrix** untuk meninjau dan menyesuaikan menu hasil salinan.
+
+Jika proses penyalinan tidak selesai setelah role custom terbentuk, aplikasi menampilkan pilihan **Hapus role draft**. Gunakan pilihan itu untuk membersihkan role yang belum siap digunakan.
+
+## Mengatur menu pada Access Matrix
+
+Pengaturan ini hanya tersedia untuk role **Custom editable**.
+
+1. Pilih role custom melalui **Role Overview** atau buka tab **Access Matrix**.
+2. Pastikan judul **Access Matrix** menampilkan role yang benar.
+3. Gunakan **Cari menu, code, atau domain** untuk menemukan menu.
+4. Gunakan filter **Semua**, **Diizinkan**, atau **Tidak Diizinkan** untuk mempersempit daftar.
+5. Centang atau kosongkan menu yang diperlukan.
+6. Untuk satu kelompok menu, gunakan **Pilih grup** atau **Kosongkan**.
+7. Periksa indikator **Dipilih**, **Policy**, dan status **Draft** atau **Sync**.
+8. Periksa **Impact Preview** di sisi kanan.
+9. Klik **Simpan**.
+
+Setiap baris menu menampilkan nama menu, code, jumlah endpoint, serta penanda **berubah** bila pilihan belum tersimpan. Tombol **Reset** mengembalikan rancangan pilihan ke kondisi terakhir yang tersimpan.
+
+:::note
+Pada role **System locked**, Access Matrix berfungsi untuk audit. Kotak pilihan, **Pilih grup**, **Kosongkan**, **Reset**, dan **Simpan** tidak dapat digunakan.
+:::
+
+## Memeriksa dampak akses
+
+1. Pilih role yang ingin diperiksa.
+2. Buka tab **Guard Preview**.
+3. Periksa panel **Permission-Aware Navigation** untuk melihat menu administrasi yang akan tampak atau terkunci pada role tersebut.
+4. Periksa panel **Action Guard** untuk melihat contoh tindakan yang tersedia atau tidak tersedia.
+5. Setelah perubahan role custom disimpan, masuk atau uji kembali menggunakan akun dengan role tersebut.
+
+Pratinjau membantu Anda menemukan menu atau tindakan yang belum diizinkan sebelum role digunakan dalam pekerjaan sehari-hari.
+
+## Mengelola Menu Permission
+
+Tab **Menu Permission** menampilkan daftar mapping untuk menu. Gunakan bagian ini hanya bila Anda memang berwenang mengelola konfigurasi permission.
+
+### Cari mapping
+
+1. Buka tab **Menu Permission**.
+2. Gunakan **Cari menu, method, atau path** bila ingin menemukan mapping tertentu.
+3. Pilih **Semua menu** atau menu tertentu.
+4. Pilih **Semua method** atau method yang diperlukan.
+
+Setiap mapping memperlihatkan nama menu, code menu, method, dan path. Klik **Hapus** pada mapping yang tidak lagi diperlukan, lalu konfirmasi dengan **Hapus mapping**.
+
+### Tambah mapping
+
+1. Pada panel **Tambah Mapping**, pilih **Menu**.
+2. Isi **Path** sesuai konfigurasi yang telah ditetapkan.
+3. Pilih **Method**.
+4. Klik **Tambahkan Mapping**.
+5. Periksa mapping baru pada daftar **Menu Permission**.
+
+## Menghapus role custom
+
+1. Pada **Role Overview**, pastikan role yang akan dihapus berstatus **Custom**.
+2. Klik **Hapus** pada baris role tersebut.
+3. Periksa nama role di dialog **Hapus role custom?**.
+4. Klik **Hapus role** untuk mengonfirmasi, atau **Batal** untuk membatalkan.
+
+Role bawaan berstatus **System locked** tidak dapat dihapus. Role custom yang masih digunakan pengguna dapat ditolak saat penghapusan; pindahkan atau sesuaikan role pengguna terlebih dahulu.
+
+## Hasil yang diharapkan
+
+Anda dapat membedakan role bawaan dan role custom, meninjau cakupan menu suatu role, membuat atau menyalin role custom, serta menyimpan pilihan menu untuk role tersebut. **Guard Preview** membantu memastikan perubahan menghasilkan navigasi dan tindakan yang sesuai kebutuhan.
+
+## Jika perubahan akses belum sesuai
+
+- Jika muncul **Akses ditolak**, gunakan akun **Super Admin** atau hubungi Super Admin untuk memperoleh akses ke **Hak Akses**.
+- Jika tombol **Simpan** tidak aktif, pastikan role berstatus **Custom editable** dan terdapat perubahan pada menu.
+- Jika menu tidak ditemukan, gunakan pencarian atau ubah filter menjadi **Semua**.
+- Jika role hasil salinan belum memiliki akses yang benar, buka **Access Matrix**, sesuaikan pilihannya, lalu klik **Simpan**.
+- Jika role custom tidak dapat dihapus, pastikan role tersebut tidak masih digunakan pengguna.
+- Jika mapping tidak terlihat setelah ditambahkan atau dihapus, buka kembali tab **Menu Permission** dan periksa filter menu, method, serta pencarian.
+
+## Langkah berikutnya
+
+Gunakan [Pengguna](./pengguna) untuk membuat akun dan menetapkan posisi pengguna sesuai role yang telah disiapkan.

@@ -63,6 +63,19 @@ const sidebars: SidebarsConfig = {
     },
     {
       type: 'category',
+      label: 'IRT',
+      items: ['administrator/irt/person'],
+    },
+    {
+      type: 'category',
+      label: 'Akses & Sistem',
+      items: [
+        'administrator/akses-sistem/pengguna',
+        'administrator/akses-sistem/hak-akses',
+      ],
+    },
+    {
+      type: 'category',
       label: 'Peserta',
       items: ['peserta/login'],
     },

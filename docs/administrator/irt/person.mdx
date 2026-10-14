@@ -1,0 +1,101 @@
+---
+title: Menganalisis kemampuan peserta dengan IRT
+description: Buat dan baca analisis kemampuan serta pola jawaban peserta untuk satu bank soal di GoSAAD.
+---
+
+import ZoomableImage from '@site/src/components/ZoomableImage';
+
+# Menganalisis kemampuan peserta dengan IRT
+
+Gunakan halaman **IRT** pada tab **Person** untuk melihat estimasi kemampuan peserta dan kesesuaian pola jawabannya untuk satu bank soal. Halaman ini membantu Anda membaca hasil analisis per peserta setelah bank soal memiliki data respons dari ujian yang selesai.
+
+## Yang perlu disiapkan
+
+- Anda memiliki akses ke menu **IRT**.
+- Bank soal yang akan diperiksa sudah tersedia.
+- Bank soal memiliki data respons dari ujian yang selesai agar analisis dapat dibuat.
+
+## Pilih bank soal
+
+1. Pada navigasi sebelah kiri, buka **IRT**.
+2. Pilih tab **Person**.
+3. Periksa ringkasan **BANK SOAL AKTIF** di bagian atas halaman.
+4. Jika bank soal belum sesuai, klik **Ganti bank**.
+5. Pada bagian **Pilih bank soal**, gunakan pencarian atau filter yang tersedia.
+6. Pilih bank soal yang ingin dianalisis.
+
+Kode bank soal, mata pelajaran, pemilik, serta status seperti **Belum dianalisis** atau **Analisis tersedia** membantu memastikan konteks analisis yang sedang dibuka.
+
+## Buat analisis
+
+1. Setelah bank soal dipilih, periksa panel status analisis.
+2. Klik **Buat analisis**. Jika analisis sudah tersedia, tombol ini berubah menjadi **Perbarui analisis**.
+3. Tunggu proses selesai. Untuk data yang lebih besar, proses dapat berjalan di latar belakang dan halaman boleh ditinggalkan.
+4. Kembali ke tab **Person** bila perlu, lalu klik **Muat ulang peserta** untuk memperbarui daftar.
+
+Analisis merangkum tiga bagian: kualitas soal, kemampuan peserta, dan konsistensi hasil. Jika belum ada jawaban dari ujian yang selesai, analisis belum dapat dibuat.
+
+:::note
+Halaman **Item**, **Person**, dan **Reliabilitas** menggunakan bank soal aktif yang sama. Pilih bank yang tepat sebelum berpindah tab agar hasilnya tetap berada pada konteks yang sama.
+:::
+
+## Lihat ringkasan kemampuan peserta
+
+Setelah terdapat data analisis, bagian atas halaman menampilkan ringkasan peserta pada halaman saat ini:
+
+- **Peserta pada halaman ini**: jumlah peserta yang tampil pada halaman aktif.
+- **Berhasil dianalisis**: jumlah peserta yang analisisnya telah selesai.
+- **Pola perlu dicek**: jumlah peserta dengan pola jawaban yang ditandai untuk diperiksa.
+- **Median kemampuan (Theta)**: nilai tengah estimasi kemampuan peserta pada halaman ini.
+
+Grafik **Sebaran estimasi kemampuan (Theta)**, **Sebaran kemampuan**, dan **Pola jawaban** membantu membaca distribusi data pada halaman yang sedang tampil. Gunakan grafik sebagai ringkasan; periksa detail peserta sebelum membuat keputusan.
+
+<ZoomableImage
+  alt="Ringkasan IRT Person dengan metrik peserta, grafik sebaran Theta, sebaran kemampuan, dan pola jawaban"
+  caption="Contoh ringkasan analisis IRT Person setelah analisis tersedia. Metrik dan grafik selalu merujuk pada peserta di halaman aktif."
+  src="/img/irt-person-ringkasan.png"
+/>
+
+## Cari dan saring peserta
+
+1. Pada bagian **Filter peserta**, isi **Cari nama atau nomor ujian** bila Anda mencari peserta tertentu.
+2. Masukkan minimal dua karakter.
+3. Centang **Hanya pola jawaban yang perlu dicek** bila Anda hanya ingin melihat peserta yang ditandai.
+4. Klik **Tampilkan**.
+
+Klik **Reset** untuk menghapus pencarian dan filter pola jawaban. Tombol **Muat ulang peserta** memperbarui data yang ditampilkan tanpa mengubah filter aktif.
+
+## Baca detail peserta
+
+1. Pada bagian **Daftar peserta**, cari nama atau nomor ujian peserta.
+2. Periksa kolom **Estimasi kemampuan**, **Pola jawaban**, **Soal dianalisis**, dan **Status**.
+3. Klik **Analisis** pada baris peserta untuk membuka detailnya.
+
+Detail memperlihatkan kategori kemampuan, nilai **Theta**, kesesuaian pola jawaban, jumlah soal yang dipakai dalam estimasi, alasan sistem bila hasil belum dapat dihitung, serta tanggal pembaruan. Kategori kemampuan ditampilkan sebagai **Tinggi**, **Sedang**, atau **Rendah**. Pola jawaban dapat berstatus **Normal** atau **Perlu cek**.
+
+Status **Perlu cek** bukan kesimpulan tunggal tentang peserta. Gunakan informasi tersebut bersama konteks pelaksanaan ujian dan analisis soal. Halaman ini tidak meminta atau menampilkan jawaban individual peserta.
+
+<ZoomableImage
+  alt="Daftar peserta IRT dengan detail analisis yang terbuka untuk satu peserta"
+  caption="Contoh detail peserta: kategori kemampuan, Theta, kesesuaian pola jawaban, jumlah soal yang dianalisis, alasan sistem, dan status analisis ditampilkan dalam satu panel."
+  src="/img/irt-person-detail.png"
+/>
+
+Gunakan tombol **Sebelumnya** dan **Berikutnya** bila daftar peserta lebih dari satu halaman.
+
+## Hasil yang diharapkan
+
+Anda dapat memilih satu bank soal, menjalankan analisis bila diperlukan, lalu melihat ringkasan dan detail kemampuan peserta pada bank soal tersebut. Filter membantu menemukan peserta tertentu atau memusatkan perhatian pada pola jawaban yang perlu diperiksa.
+
+## Jika analisis peserta belum tampil
+
+- Jika muncul **Belum ada analisis peserta**, buat analisis setelah data respons dari ujian selesai tersedia.
+- Jika pencarian ditolak, pastikan kata kunci berisi 2 sampai 100 karakter.
+- Jika tidak ada peserta yang ditemukan setelah filter digunakan, klik **Reset** atau hapus pilihan **Hanya pola jawaban yang perlu dicek**.
+- Jika hasil masih belum berubah setelah proses selesai, klik **Muat ulang peserta**.
+- Jika bank soal yang tampil tidak sesuai, klik **Ganti bank** dan pilih kembali bank soal yang benar.
+- Jika analisis belum cukup data, baca status peserta dan alasan sistem pada detail peserta sebelum menarik kesimpulan.
+
+## Langkah berikutnya
+
+Lanjutkan ke [Summary Bank Soal](../evaluasi/summary-bank-soal) untuk melihat ringkasan hasil penggunaan bank soal secara menyeluruh.
