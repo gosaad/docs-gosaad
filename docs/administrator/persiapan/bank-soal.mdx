@@ -5,10 +5,19 @@ description: Buat dan kelola bank soal, referensi, kepemilikan, backup, dan rest
 ---
 
 import ZoomableImage from '@site/src/components/ZoomableImage';
+import Admonition from '@theme/Admonition';
 
 # Ringkasan bank soal
 
 Halaman **Bank soal** dipakai untuk membuat, mencari, dan mengelola bank soal. Anda dapat memfilter data berdasarkan kode bank soal, mata pelajaran, atau pemilik.
+
+<Admonition type="tip" title="Dukungan 11 tipe soal dan Template DOCX">
+
+GoSAAD mendukung 11 tipe soal aktif: **Pilihan ganda**, **Pilihan ganda kompleks**, **Pilihan ganda citra**, **Menjodohkan**, **Isian singkat**, **Listening**, **Esai**, **Benar salah**, **Menjodohkan ke banyak**, **Matrix**, dan **Isian rumpang**.
+
+Saat mengimpor soal, unduh **Template DOCX** terlebih dahulu. Template tersebut memuat satu contoh beserta format pengisian untuk setiap tipe soal, termasuk metadata yang diperlukan dan catatan khusus untuk tipe tertentu. Gunakan contoh yang sesuai dengan tipe soal Anda, lalu ganti isinya sebelum memilih **Import DOCX**.
+
+</Admonition>
 
 <ZoomableImage
   alt="Tampilan daftar bank soal GoSAAD dengan tombol tambah, restore, referensi, transfer, dan backup"
@@ -30,7 +39,7 @@ Klik **Tambah banksoal**, isi data yang diperlukan, lalu simpan. Bank soal baru 
 1. Pada baris bank soal yang dipilih, klik **Daftar soal**.
 2. Klik **Tambah soal** untuk menambahkan soal satu per satu.
 3. Gunakan **Import DOCX** atau **Import paket JSON** untuk memasukkan soal dari berkas.
-4. Unduh **Template DOCX** bila memerlukan format impor.
+4. Unduh **Template DOCX** untuk melihat contoh dan format impor bagi masing-masing dari 11 tipe soal aktif.
 5. Klik **Preview banksoal** untuk meninjau tampilan bank soal sebelum digunakan.
 
 **Import paket JSON** adalah opsi impor lanjutan. Gunakan format ini saat Anda ingin menggabungkan proses pembuatan soal dengan AI, lalu memasukkan paket soal yang dihasilkan ke GoSAAD.
