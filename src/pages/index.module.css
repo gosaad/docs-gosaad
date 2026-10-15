@@ -4,123 +4,48 @@
  */
 
 .heroBanner {
+  --gs-hero-glow-1: rgba(96, 165, 250, 0.22);
+  --gs-hero-glow-2: rgba(56, 189, 248, 0.16);
+  --ifm-hero-text-color: var(--ifm-heading-color);
   background:
-    radial-gradient(circle at 15% 18%, rgba(96, 165, 250, 0.28), transparent 24rem),
-    radial-gradient(circle at 85% 84%, rgba(56, 189, 248, 0.2), transparent 25rem),
-    linear-gradient(135deg, #f7fbff 0%, #eef6ff 48%, #f8fcff 100%);
-  color: #0f172a;
-  padding: 5rem 0;
+    radial-gradient(circle at 15% 20%, var(--gs-hero-glow-1), transparent 24rem),
+    radial-gradient(circle at 85% 80%, var(--gs-hero-glow-2), transparent 24rem),
+    var(--ifm-background-color);
+  border-bottom: 1px solid var(--gs-border-color);
+  padding: var(--gs-space-8) 0;
   text-align: center;
-  position: relative;
-  overflow: hidden;
+}
+
+[data-theme='dark'] .heroBanner {
+  --gs-hero-glow-1: rgba(31, 122, 248, 0.24);
+  --gs-hero-glow-2: rgba(14, 116, 144, 0.2);
 }
 
 .brandIcon {
   display: block;
-  height: 6rem;
-  margin: 0 auto 1.5rem;
-  width: 6rem;
+  filter: drop-shadow(0 8px 16px rgba(30, 64, 175, 0.14));
+  height: 5rem;
+  margin: 0 auto var(--gs-space-5);
+  width: 5rem;
 }
 
-.heroTitle {
-  color: #020617;
+.heroSubtitle {
+  color: var(--ifm-color-emphasis-700);
+  font-size: 1.25rem;
+  margin: 0 auto var(--gs-space-6);
+  max-width: 40rem;
 }
 
-.heroBanner :global(.hero__subtitle) {
-  color: #475569;
-  font-weight: 500;
-}
-
-.heroBanner :global(.button--secondary) {
-  background: #1f7af8;
-  border: 1px solid #1f7af8;
-  color: #fff;
-  box-shadow: 0 12px 30px rgba(31, 122, 248, 0.24);
-}
-
-.heroBanner :global(.button--secondary:hover) {
-  background: #1267e1;
-  border-color: #1267e1;
-  color: #fff;
-}
-
-.heroBanner :global(.button--outline) {
-  background: rgba(255, 255, 255, 0.76);
-  border: 1px solid #93c5fd;
-  color: #075985;
-}
-
-.heroBanner :global(.button--outline:hover) {
-  background: #fff;
-  border-color: #38bdf8;
-  color: #075985;
+.buttons {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gs-space-3);
+  justify-content: center;
 }
 
 @media screen and (max-width: 996px) {
   .heroBanner {
-    padding: 3.5rem 2rem;
+    padding: var(--gs-space-7) var(--gs-space-4);
   }
-}
-
-html[data-theme='dark'] .heroBanner {
-  background:
-    radial-gradient(circle at 15% 18%, rgba(31, 122, 248, 0.28), transparent 24rem),
-    radial-gradient(circle at 85% 84%, rgba(14, 116, 144, 0.22), transparent 25rem),
-    linear-gradient(135deg, #0b1220 0%, #101c33 52%, #0b1220 100%);
-  color: #e2e8f0;
-}
-
-html[data-theme='dark'] .heroTitle {
-  color: #f8fafc;
-}
-
-html[data-theme='dark'] .heroBanner :global(.hero__subtitle) {
-  color: #cbd5e1;
-}
-
-.buttons {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.75rem;
-  align-items: center;
-  justify-content: center;
-}
-
-.telegramLink {
-  align-items: center;
-  color: #0f5f8f;
-  display: inline-flex;
-  font-weight: 700;
-  gap: 0.5rem;
-  margin-top: 1.25rem;
-  text-decoration: none;
-}
-
-.telegramLink:hover {
-  color: #0a4e77;
-  text-decoration: underline;
-}
-
-.telegramLink img {
-  height: 1.75rem;
-  width: 1.75rem;
-}
-
-html[data-theme='dark'] .telegramLink {
-  color: #7dd3fc;
-}
-
-html[data-theme='dark'] .telegramLink:hover {
-  color: #bae6fd;
-}
-
-html[data-theme='dark'] .heroBanner :global(.button--outline) {
-  background: rgba(15, 23, 42, 0.72);
-  border-color: #3b82f6;
-  color: #bfdbfe;
-}
-
-html[data-theme='dark'] .heroBanner :global(.button--outline:hover) {
-  background: #172554;
-  color: #e0f2fe;
 }

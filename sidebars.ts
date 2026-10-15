@@ -18,8 +18,8 @@ const sidebars: SidebarsConfig = {
     {
       type: 'category',
       label: 'Data master',
+      link: {type: 'doc', id: 'administrator/data-master/index'},
       items: [
-        'administrator/data-master/index',
         'administrator/data-master/peserta',
         'administrator/data-master/tambah-peserta',
         'administrator/data-master/upload-data-peserta',

@@ -1,0 +1,19 @@
+.icon {
+  display: block;
+  flex: 0 0 auto;
+}
+
+.sm {
+  height: var(--gs-icon-sm);
+  width: var(--gs-icon-sm);
+}
+
+.md {
+  height: var(--gs-icon-md);
+  width: var(--gs-icon-md);
+}
+
+.lg {
+  height: var(--gs-icon-lg);
+  width: var(--gs-icon-lg);
+}

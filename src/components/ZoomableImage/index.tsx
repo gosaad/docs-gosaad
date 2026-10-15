@@ -1,4 +1,5 @@
 import {useEffect, useRef, useState} from 'react';
+import Icon from '@site/src/components/Icon';
 import styles from './styles.module.css';
 
 type ZoomableImageProps = {
@@ -11,11 +12,7 @@ const MIN_ZOOM = 0.75;
 const MAX_ZOOM = 3;
 const ZOOM_STEP = 0.25;
 
-export default function ZoomableImage({
-  alt,
-  caption = 'Klik gambar untuk memperbesar.',
-  src,
-}: ZoomableImageProps) {
+export default function ZoomableImage({alt, caption, src}: ZoomableImageProps) {
   const dialogRef = useRef<HTMLDialogElement>(null);
   const [isOpen, setIsOpen] = useState(false);
   const [zoom, setZoom] = useState(1);
@@ -47,10 +44,11 @@ export default function ZoomableImage({
         type="button">
         <img alt={alt} className={styles.previewImage} src={src} />
         <span aria-hidden="true" className={styles.zoomHint}>
-          Klik untuk memperbesar
+          <Icon name="zoomIn" size="sm" />
+          <span className={styles.zoomHintLabel}>Perbesar</span>
         </span>
       </button>
-      <figcaption>{caption}</figcaption>
+      {caption && <figcaption>{caption}</figcaption>}
 
       <dialog
         aria-label={`Tampilan besar: ${alt}`}
@@ -65,21 +63,36 @@ export default function ZoomableImage({
                 aria-label="Perkecil gambar"
                 disabled={zoom <= MIN_ZOOM}
                 onClick={() => setZoom((value) => Math.max(MIN_ZOOM, value - ZOOM_STEP))}
+                title="Perkecil"
                 type="button">
-                −
+                <Icon name="zoomOut" size="sm" />
               </button>
-              <button onClick={() => setZoom(1)} type="button">
-                Reset
-              </button>
+              <span aria-live="polite" className={styles.zoomLevel}>
+                {Math.round(zoom * 100)}%
+              </span>
               <button
                 aria-label="Perbesar gambar"
                 disabled={zoom >= MAX_ZOOM}
                 onClick={() => setZoom((value) => Math.min(MAX_ZOOM, value + ZOOM_STEP))}
+                title="Perbesar"
                 type="button">
-                +
+                <Icon name="zoomIn" size="sm" />
               </button>
-              <button onClick={closeDialog} type="button">
-                Tutup
+              <button
+                aria-label="Kembalikan ukuran gambar"
+                disabled={zoom === 1}
+                onClick={() => setZoom(1)}
+                title="Reset"
+                type="button">
+                <Icon name="reset" size="sm" />
+              </button>
+              <span aria-hidden="true" className={styles.divider} />
+              <button
+                aria-label="Tutup tampilan besar"
+                onClick={closeDialog}
+                title="Tutup"
+                type="button">
+                <Icon name="close" size="sm" />
               </button>
             </div>
           </div>

@@ -1,5 +1,5 @@
 .figure {
-  margin: 1.5rem 0 2rem;
+  margin: var(--gs-space-5) 0 var(--gs-space-6);
 }
 
 .previewButton {
@@ -9,14 +9,21 @@
   padding: 0;
   overflow: hidden;
   cursor: zoom-in;
-  background: transparent;
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 0.75rem;
+  background: var(--ifm-background-surface-color);
+  border: 1px solid var(--gs-border-color);
+  border-radius: var(--gs-radius-md);
+  box-shadow: var(--gs-shadow-sm);
+  transition: border-color var(--gs-transition), box-shadow var(--gs-transition);
+}
+
+.previewButton:hover {
+  border-color: var(--gs-border-color-strong);
+  box-shadow: var(--gs-shadow-md);
 }
 
 .previewButton:focus-visible {
-  outline: 3px solid var(--ifm-color-primary);
-  outline-offset: 3px;
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 2px;
 }
 
 .previewImage {
@@ -25,29 +32,40 @@
   height: auto;
 }
 
+/* Always visible so touch users see the image can be enlarged; the label
+   only expands on hover or focus. */
 .zoomHint {
   position: absolute;
-  right: 0.75rem;
-  bottom: 0.75rem;
-  padding: 0.35rem 0.6rem;
+  right: var(--gs-space-3);
+  bottom: var(--gs-space-3);
+  display: inline-flex;
+  gap: var(--gs-space-1);
+  align-items: center;
+  justify-content: center;
+  min-width: var(--gs-icon-box-sm);
+  height: var(--gs-icon-box-sm);
+  padding: 0 var(--gs-space-2);
   color: #fff;
-  font-size: 0.75rem;
-  font-weight: 700;
-  background: rgba(11, 18, 32, 0.82);
-  border-radius: 999px;
-  opacity: 0;
-  transition: opacity 160ms ease;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  background: rgba(11, 18, 32, 0.78);
+  border-radius: var(--gs-radius-full);
 }
 
-.previewButton:hover .zoomHint,
-.previewButton:focus-visible .zoomHint {
-  opacity: 1;
+.zoomHintLabel {
+  display: none;
+}
+
+.previewButton:hover .zoomHintLabel,
+.previewButton:focus-visible .zoomHintLabel {
+  display: inline;
 }
 
 .figure figcaption {
-  margin-top: 0.5rem;
+  margin-top: var(--gs-space-2);
   color: var(--ifm-color-emphasis-700);
   font-size: 0.875rem;
+  line-height: 1.5;
 }
 
 .dialog {
@@ -58,8 +76,8 @@
   padding: 0;
   color: var(--ifm-font-color-base);
   background: var(--ifm-background-surface-color);
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 0.875rem;
+  border: 1px solid var(--gs-border-color);
+  border-radius: var(--gs-radius-lg);
   box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
 }
 
@@ -76,57 +94,75 @@
 .toolbar {
   display: flex;
   flex-wrap: wrap;
-  gap: 0.75rem;
+  gap: var(--gs-space-3);
   align-items: center;
   justify-content: space-between;
-  padding: 0.75rem 1rem;
-  border-bottom: 1px solid var(--ifm-color-emphasis-300);
+  padding: var(--gs-space-3) var(--gs-space-4);
+  border-bottom: 1px solid var(--gs-border-color);
 }
 
 .toolbar p {
+  flex: 1 1 16rem;
   margin: 0;
   font-size: 0.875rem;
-  font-weight: 700;
+  font-weight: 600;
 }
 
 .controls {
   display: flex;
-  gap: 0.5rem;
+  gap: var(--gs-space-1);
   align-items: center;
 }
 
 .controls button {
-  min-width: 2.25rem;
-  padding: 0.4rem 0.65rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--gs-icon-box-sm);
+  height: var(--gs-icon-box-sm);
+  padding: 0;
   color: var(--ifm-font-color-base);
-  font: inherit;
-  font-weight: 700;
   cursor: pointer;
-  background: var(--ifm-background-color);
-  border: 1px solid var(--ifm-color-emphasis-300);
-  border-radius: 0.375rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--gs-radius-sm);
+  transition: background var(--gs-transition), color var(--gs-transition);
 }
 
 .controls button:hover:not(:disabled) {
-  color: #fff;
-  background: var(--ifm-color-primary);
-  border-color: var(--ifm-color-primary);
+  color: var(--ifm-color-primary);
+  background: var(--gs-icon-box-background);
 }
 
 .controls button:focus-visible {
-  outline: 3px solid var(--ifm-color-primary);
-  outline-offset: 2px;
+  outline: 2px solid var(--ifm-color-primary);
+  outline-offset: 1px;
 }
 
 .controls button:disabled {
   cursor: not-allowed;
-  opacity: 0.5;
+  opacity: 0.4;
+}
+
+.zoomLevel {
+  min-width: 3rem;
+  font-size: 0.8125rem;
+  font-variant-numeric: tabular-nums;
+  font-weight: 600;
+  text-align: center;
+}
+
+.divider {
+  width: 1px;
+  height: var(--gs-space-5);
+  margin: 0 var(--gs-space-1);
+  background: var(--gs-border-color);
 }
 
 .imageViewport {
   flex: 1;
   overflow: auto;
-  padding: 1rem;
+  padding: var(--gs-space-4);
   text-align: center;
   background: var(--ifm-background-color);
 }
@@ -144,9 +180,5 @@
     height: 100vh;
     border: 0;
     border-radius: 0;
-  }
-
-  .toolbar {
-    align-items: flex-start;
   }
 }

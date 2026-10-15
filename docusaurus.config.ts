@@ -72,7 +72,9 @@ const config: Config = {
       title: 'GoSAAD',
       logo: {
         alt: 'GoSAAD',
-        src: 'img/gosaad-icon.svg',
+        src: 'img/gosaad-logo.svg',
+        width: 32,
+        height: 32,
       },
       items: [
         {
@@ -84,13 +86,21 @@ const config: Config = {
       ],
     },
     footer: {
-      style: 'dark',
+      style: 'light',
       links: [
+        {
+          title: 'Panduan',
+          items: [
+            {label: 'Mengenal GoSAAD', to: '/docs/intro'},
+            {label: 'Panduan Administrator', to: '/docs/administrator/login'},
+            {label: 'Panduan Peserta', to: '/docs/peserta/login'},
+          ],
+        },
         {
           title: 'Komunitas',
           items: [
             {
-              label: 'Bergabung diskusi di Telegram',
+              label: 'Diskusi di Telegram',
               href: 'https://t.me/gosaad02',
               className: 'telegramFooterLink',
             },
