@@ -24,6 +24,16 @@ Arsitektur sistem, endpoint API, database, kode backend, deployment, dan konfigu
 
 Halaman pengenalan GoSAAD sudah menjadi titik masuk panduan. Konten tutorial bawaan yang masih berada di `docs/tutorial-*` adalah sisa template dan tidak muncul di navigasi; jangan gunakan sebagai panduan penggunaan GoSAAD. Ganti atau hapus konten tersebut saat panduan fiturnya tersedia dan sudah diverifikasi dari UI.
 
+## Gaya tampilan
+
+Tampilan mengikuti tema bawaan Docusaurus (Infima). Ubah warna, radius, dan jarak melalui variabel CSS di `src/css/custom.css`, bukan dengan nilai tetap di tiap komponen:
+
+- `--ifm-*` untuk variabel Infima (warna utama, latar, navbar, footer, dan lain-lain). Mode gelap cukup mengganti variabel di blok `[data-theme='dark']`.
+- `--gs-space-1` sampai `--gs-space-8` untuk skala jarak (kelipatan 4px).
+- `--gs-icon-sm|md|lg` untuk ukuran ikon dan `--gs-icon-box-sm|md|lg` untuk wadah ikon.
+
+Ikon antarmuka tersedia di `src/components/Icon`. Gunakan ukuran `sm` untuk ikon di samping teks dan `md` di dalam wadah ikon.
+
 ## Menjalankan situs dokumentasi
 
 Situs ini menggunakan Docusaurus dan membutuhkan Node.js versi 20 atau lebih baru.
